@@ -1,0 +1,7 @@
+archive/
+.DS_Store
+**/.DS_Store
+*.swp
+*.swm
+*.swo
+*.swn
