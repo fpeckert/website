@@ -6,30 +6,25 @@ body {
   color: rgba(255,253,218,1);
 }
 
-a:link {
-  font-family: Helvetica Neue Light, Arial, Helvetica, sans-serif;
-  color: rgba(255,253,218,1);
-  background-color: transparent;
-  text-decoration: none;
+::selection {
+  background: #CD5C5C;
+  color: #FFFDDA;
 }
 
-a:visited {
+a {
   font-family: Helvetica Neue Light, Arial, Helvetica, sans-serif;
   color: rgba(255,253,218,1);
   background-color: transparent;
   text-decoration: none;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 a:hover {
-  color: rgba(255,253,218,1);
-  background-color: transparent;
-  text-decoration: underline;
+  opacity: 0.8;
 }
 
 a:active {
-  color: rgba(255,253,218,1);
-  background-color: transparent;
-  text-decoration: underline;
+  opacity: 0.8;
 }
 
 .spacing-box {
@@ -40,6 +35,8 @@ a:active {
   width: 100%;
   max-width: 450px;
   margin: auto;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .img-wrapper {
@@ -141,6 +138,11 @@ a:active {
   color: rgba(255,253,218,1);
 }
 
+.project-text > a:first-child:hover {
+  color: #CD5C5C;
+  opacity: 1;
+}
+
 .abstract-toggle-wrapper {
   padding-left: 10px;
   box-sizing: border-box;
@@ -197,4 +199,10 @@ a:active {
 
 .no-underline {
   text-decoration: none;
+}
+
+.section-header {
+  display: block;
+  margin-top: 22px;
+  margin-bottom: 8px;
 }
