@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Fabian Eckert</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="./favicon.png">
   <link rel="stylesheet" type="text/css" href="./style.css">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src='./script-papers.js'></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script type="text/javascript">
+    window.onload = function() {
+      Calendly.initBadgeWidget({
+        url: 'https://calendly.com/fpeckert/officehour',
+        text: 'Schedule Office Hour',
+        color: '#cd5c5c',
+        textColor: '#fffdda',
+        branding: undefined
+      });
+    }
+  </script>
 </head>
 
 <body>
@@ -22,27 +37,12 @@
       <hr style="width: 75%; margin: 0 auto; margin-bottom: 20px; color: #F5F5DC;">
     </div>
 
-    <!-- Calendly badge widget -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script type="text/javascript">
-      window.onload = function() {
-        Calendly.initBadgeWidget({
-          url: 'https://calendly.com/fpeckert/officehour',
-          text: 'Schedule Office Hour',
-          color: '#cd5c5c',
-          textColor: '#fffdda',
-          branding: undefined
-        });
-      }
-    </script>
-
     <!-- Navigation -->
     <div class='nav-wrapper'>
       <ul>
         <li><a href='https://scholar.google.com/citations?hl=en&user=Jppt4IUAAAAJ'>[gscholar]</a></li>
         <li><a href='./fpe_cv.pdf'>[cv]</a></li>
-        <li><a href='https://twitter.com/fpeckert?lang=en'>[twitter]</a></li>
+        <li><a href='https://x.com/fpeckert'>[x]</a></li>
         <li><a href='https://economics.ucsd.edu/faculty-and-research/faculty-profiles/eckert.html'>[ucsd page]</a></li>
         <br>
         <li><a href='./elmmss'>[Early CBP Data]</a></li>
