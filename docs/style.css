@@ -4,6 +4,7 @@ body {
   background: rgba(40,43,51,1);
   overflow-x: hidden;
   color: rgba(255,253,218,1);
+  line-height: 1.4;
 }
 
 ::selection {
@@ -136,6 +137,10 @@ a:active {
   margin: 0;
   margin-bottom: 13px;
   color: rgba(255,253,218,1);
+}
+
+.project-text small {
+  line-height: 1.2;
 }
 
 .project-text > a:first-child:hover {
