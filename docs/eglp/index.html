@@ -1,231 +1,128 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <script src='./script-papers.js'></script>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <script src='./script-papers.js'></script>
+</head>
+<body>
+  <div class='spacing-box'></div>
+  <div class='main-wrapper'>
 
-    
-  </head>
-  <body>
-    <div class='spacing-box'></div>
-    <div class='main-wrapper'>
-     
-      <div class='name-wrapper'>
-        <a href='../'>
-
-<!--<img src="all_emp_gif.gif" alt="Total Emp Gif" style="height:20%;">-->
-<img src="US_POP.gif" alt="Total Emp Gif" class="mapImage">
-
-
-          <!--
-            *****YOUR NAME BELOW HERE inside <h1></h1> tags
-            fyi: needs to be edited on every page individually 
-            because we built this website in the simplest way possible ;-)
-          -->
-          <h1>Creating Geographical Crosswalks</h1>
-
-
-
-        </a>
-      </div>
-      <div class='description-wrapper'>
-        
-
-
-        <!--
-          *****DESCRIPTION LINES BELOW HERE inside <h2></h2> tags
-          fyi: needs to be edited on every page individually 
-          because we built this website in the simplest way possible ;-)
-        -->
-        <h2 class='marg-top'>
-<font size="4">by <a href='http://fpeckert.me/'>Fabian Eckert</a>, <a href=''>Andr&eacute;s Gvirtz</a>, <a href=''>Jack Liang</a>, and <a href='https://mipeters.weebly.com/'>Michael Peters</a></font></h2>
-
-
-
-
-      </div>
-      <div class='nav-wrapper'>
-        <ul>
-        </ul>
-      </div>
-      <div class='content-wrapper fade-in'>
-
-        
-        <br>
-        
-         <!-- PROJECT START -->
-             <div class='research-project'>
-                <p class='project-text'>
-                  <a target="_blank" 
-                    href="../eglp.pdf"
-                    title="open pdf in new window"
-                    >
-                    A Method to Construct Geographical Crosswalks with an Application to US Counties since 1790
-                  </a>
-                  [01/20] [<a href="../eglp">Data Files</a>] [<a href="https://www.nber.org/papers/w26770">NBER WP #26770</a>] [<a href="../papers/egp-spatialcrosswalk.pdf">Old Version</a>]<br>
-                  
-                </p>
-                
-        <!-- PROJECT END -->
-        
-        
-         <br>
-
-
-
-  <p class='no-margin'>
-          <b>Abstract:</b>
-        </p>
-        <p class='small-font no-margin'>
-Empirical researchers often have to map data provided for a <q>reporting</q> spatial unit, say counties in 1900, to a <q>reference</q> one, say, counties in 2010. We discuss a general method to create such crosswalks: computing the share of the area of each reporting unit nested in a given reference unit. Using these shares, data can be re-aggregated from the reporting to the reference units. We apply the method to construct a crosswalk for mapping US county-level data from 1790 to 2010 to present-day county or commuting zone delineations. We also provide the code to generate other crosswalks given maps of reporting and reference units.
-     </p>
-     
- 
-        <br>
-
- <p class='no-margin'>
-          <b>US County Crosswalks:</b>
-         </p>
-          <p class='small-font no-margin'>
-                  
-                  
-                          <a href="http://fpeckert.me/eglp/Materials/Crosswalk%20Files/eglp_county_crosswalk_endyr_1990.csv" download>
-                    1990 Counties</a> &nbsp;
-
-                          <a href="http://fpeckert.me/eglp/Materials/Crosswalk%20Files/eglp_county_crosswalk_endyr_2010.csv" download>
-                    2010 Counties</a> &nbsp;
-                
-                          <a href="http://fpeckert.me/eglp/Materials/Crosswalk%20Files/eglp_cz_crosswalk_endyr_1990.csv" download>
-                    1990 Commuting Zones</a> &nbsp;
-                    <br>
-                    
-                   
-                    
-                  
-                    <a href="http://fpeckert.me/eglp/Materials/County%20Crosswalk%20Replication.zip" download>
-                    Replication Package</a> &nbsp;
-                
-                   <a href="https://github.com/liang-jack-a/EGLP_Crosswalk" download>
-                    Github Repo</a> &nbsp;
-                  
-                   <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/blob/master/Crosswalks/README_crosswalks.md" download>
-                    Crosswalk Readme</a> &nbsp; 
-                    
-                    <br>
-                    
-                     
-                     <a href="http://fpeckert.me/eglp/Materials/Use%20Example.zip" download>
-                    Usage Example</a> &nbsp;
-                    
-                  
-                  
-                          <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/blob/master/Example/README_example.md" download>
-                    Example Readme</a> &nbsp; 
-                 
-                </p>
-                
-        <br>
-        
-        
-        
-         <p class='no-margin'>
-          <b>US Commuting Zone Shapefile:</b>
-         </p>
-          <p class='small-font no-margin'>
-                  
-                          <a href="http://fpeckert.me/eglp/Materials/Shapefiles/cz1990_shapefile.zip" download>
-                    1990</a> &nbsp;
-                                                <br>         
-                  
-                          <a href="https://healthinequality.org/data/" download>
-                    Source</a> &nbsp; 
-                </p>
-                
-        <br>
-        
-                    
-
-        
-        <p class='no-margin'>
-          <b>Creating General Geographical Crosswalks:</b>
-         </p>
-          <p class='small-font no-margin'>
-                  
-                 
-
-                          <a href="http://fpeckert.me/eglp/Materials/General%20Crosswalk/eglp_crosswalk_generic.py" download>
-                    Python Codes</a> &nbsp;
-
-
-
-                          <a href="https://github.com/liang-jack-a/EGLP_Crosswalk" download>
-                    Github Repo</a> &nbsp;
-
-               
-                            <br>         
-                  
-                          <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/blob/master/Code/README_crosswalk_generation.md" download>
-                    Readme</a> &nbsp; 
-                  
-                </p>
-                
-        <br>        
-        
-        <br>
-              
-        <p class='no-margin'>
-          <b>If you use the crosswalks or code posted on this website please cite:</b>
-        </p>
-        <br>
-          <!-- PROJECT START -->
-              <div class='research-project'>
-                <p class='project-text'>
-                    Fabian Eckert, Andr&eacute;s Gvirtz, Jack Liang, and Michael Peters. "A Method to Construct Geographical Crosswalks with an Application to US Counties since 1790." <i> NBER Working Paper #26770, 2020</i>
-                </p>
-                <div class='abstract-toggle-wrapper'>
-                  <div class='abstract-text-wrapper'>
-                    <p class='abstract-text slide-in'>
-                     @techreport{eckert2020crosswalk,<br>
-                     title={A Method to Construct Geographical Crosswalks with an Application to US Counties since 1790},<br>
-                     author={Eckert, Fabian and Gvirtz, Andr{\'e}s and Liang, Jack and Peters, Michael},<br>
-                    year={2020},<br>
-                    institution={National Bureau of Economic Research}<br>
-                    <!--institution={Yale mimeo}<br>-->
-                     }
-                    </p>
-                  </div>
-                  <div class="toggle-wrapper">
-                    <a href="#" class='abstract-toggle'></a>
-                  </div>
-                </div>
-              </div>
-        <!-- PROJECT END -->
-        <br>
-
-         <p class='no-margin'>
-          <b>Other Ready-made Crosswalks for US Data:</b>
-        </p>
-        <p class='small-font no-margin'>
-            <ul>
-             <li>For Census Tracts 1970-2010 is  <a href="https://s4.ad.brown.edu/Projects/Diversity/Researcher/Bridging.htm">
-                    here</a> </li>
-             <li>The County Longitudinal Template we reference is <a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/6576">
-                    here</a> </li>
-             <li>Richard Hornbeck provides county boundary fixes for 1880-1910 in the suppelementary material to: <q>Barbed Wire: Property Rights and Agricultural Development</q> <a href="https://voices.uchicago.edu/richardhornbeck/">
-                    here</a></li>
-            </ul>
-     </p>
-     
-
-        <br><br><br>
-
-
-
-      </div>
-
+    <div class='name-wrapper'>
+      <a href='../'>
+        <img src="US_POP.gif" alt="Total Emp Gif" class="mapImage">
+        <h1>Creating Geographical Crosswalks</h1>
+      </a>
     </div>
 
-  </body>
+    <div class='description-wrapper'>
+      <h2 class='marg-top'>
+        <font size="4">by
+          <a href='http://fpeckert.me/'>Fabian Eckert</a>,
+          <a href='https://agvirtz.github.io/'>Andr&eacute;s Gvirtz</a>,
+          <a href='https://sites.google.com/view/jackliang'>Jack Liang</a>, and
+          <a href='https://mipeters.weebly.com/'>Michael Peters</a>
+        </font>
+      </h2>
+    </div>
 
+    <div class='nav-wrapper'>
+      <ul></ul>
+    </div>
 
+    <div class='content-wrapper fade-in'>
+      <br>
+
+      <div class='research-project'>
+        <p class='project-text'>
+          <a target="_blank" href="../eglp.pdf" title="open pdf in new window">A Method to Construct Geographical Crosswalks with an Application to US Counties since 1790</a>
+          [01/20] [<a href="../eglp">Data Files</a>] [<a href="https://www.nber.org/papers/w26770">NBER WP #26770</a>] [<a href="../papers/egp-spatialcrosswalk.pdf">Old Version</a>]
+          <br>
+        </p>
+      </div>
+
+      <br>
+
+      <p class='no-margin'><b>Abstract:</b></p>
+      <p class='small-font no-margin'>
+        Empirical researchers often have to map data provided for a <q>reporting</q> spatial unit, say counties in 1900, to a <q>reference</q> one, say, counties in 2010. We discuss a general method to create such crosswalks: computing the share of the area of each reporting unit nested in a given reference unit. Using these shares, data can be re-aggregated from the reporting to the reference units. We apply the method to construct a crosswalk for mapping US county-level data from 1790 to 2010 to present-day county or commuting zone delineations. We also provide the code to generate other crosswalks given maps of reporting and reference units.
+      </p>
+
+      <br>
+
+      <p class='no-margin'><b>US County Crosswalks:</b></p>
+      <p class='small-font no-margin'>
+        <a href="http://fpeckert.me/eglp/Materials/Crosswalk%20Files/eglp_county_crosswalk_endyr_1990.csv" download>1990 Counties</a>&nbsp;
+        <a href="http://fpeckert.me/eglp/Materials/Crosswalk%20Files/eglp_county_crosswalk_endyr_2010.csv" download>2010 Counties</a>&nbsp;
+        <a href="http://fpeckert.me/eglp/Materials/Crosswalk%20Files/eglp_cz_crosswalk_endyr_1990.csv" download>1990 Commuting Zones</a>
+        <br>
+        <a href="http://fpeckert.me/eglp/Materials/County%20Crosswalk%20Replication.zip" download>Replication Package</a>&nbsp;
+        <a href="https://github.com/liang-jack-a/EGLP_Crosswalk" download>Github Repo</a>&nbsp;
+        <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/blob/master/Crosswalks/README_crosswalks.md" download>Crosswalk Readme</a>
+        <br>
+        <a href="http://fpeckert.me/eglp/Materials/Use%20Example.zip" download>Usage Example</a>&nbsp;
+        <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/blob/master/Example/README_example.md" download>Example Readme</a>
+      </p>
+
+      <br>
+
+      <p class='no-margin'><b>US Commuting Zone Shapefile:</b></p>
+      <p class='small-font no-margin'>
+        <a href="http://fpeckert.me/eglp/Materials/Shapefiles/cz1990_shapefile.zip" download>1990</a>
+        <br>
+        <a href="https://healthinequality.org/data/" download>Source</a>
+      </p>
+
+      <br>
+
+      <p class='no-margin'><b>Creating General Geographical Crosswalks:</b></p>
+      <p class='small-font no-margin'>
+        <a href="http://fpeckert.me/eglp/Materials/General%20Crosswalk/eglp_crosswalk_generic.py" download>Python Codes</a>&nbsp;
+        <a href="https://github.com/liang-jack-a/EGLP_Crosswalk" download>Github Repo</a>
+        <br>
+        <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/blob/master/Code/README_crosswalk_generation.md" download>Readme</a>
+      </p>
+
+      <br><br>
+
+      <p class='no-margin'><b>If you use the crosswalks or code posted on this website please cite:</b></p>
+      <br>
+      <div class='research-project'>
+        <p class='project-text'>
+          Fabian Eckert, Andr&eacute;s Gvirtz, Jack Liang, and Michael Peters. "A Method to Construct Geographical Crosswalks with an Application to US Counties since 1790." <i>NBER Working Paper #26770, 2020</i>
+        </p>
+        <div class='abstract-toggle-wrapper'>
+          <div class='abstract-text-wrapper'>
+            <p class='abstract-text slide-in'>
+              @techreport{eckert2020crosswalk,<br>
+              title={A Method to Construct Geographical Crosswalks with an Application to US Counties since 1790},<br>
+              author={Eckert, Fabian and Gvirtz, Andr{\'e}s and Liang, Jack and Peters, Michael},<br>
+              year={2020},<br>
+              institution={National Bureau of Economic Research}<br>
+              }
+            </p>
+          </div>
+          <div class="toggle-wrapper">
+            <a href="#" class='abstract-toggle'></a>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <p class='no-margin'><b>Other Ready-made Crosswalks for US Data:</b></p>
+      <p class='small-font no-margin'>
+        <ul>
+          <li>For Census Tracts 1970-2010 is <a href="https://s4.ad.brown.edu/Projects/Diversity/Researcher/Bridging.htm">here</a></li>
+          <li>The County Longitudinal Template we reference is <a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/6576">here</a></li>
+          <li>Richard Hornbeck provides county boundary fixes for 1880-1910 in the suppelementary material to: <q>Barbed Wire: Property Rights and Agricultural Development</q> <a href="https://voices.uchicago.edu/richardhornbeck/">here</a></li>
+        </ul>
+      </p>
+
+      <br><br><br>
+
+    </div>
+  </div>
+</body>
 </html>
