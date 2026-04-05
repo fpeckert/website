@@ -272,16 +272,15 @@ a:active {
     margin-bottom: 8px;
   }
 
-  /* On phone, coauthors drop to second line naturally — that's fine */
-  .paper-coauthors {
-    font-size: 0.8em;
-  }
-
-  .paper-links {
-    font-size: 0.7em;
-  }
-
+  /* On phone, hide coauthors, links, and media — show only title + venue */
+  .paper-coauthors,
+  .paper-links,
   .paper-media {
-    font-size: 0.65em;
+    display: none;
+  }
+
+  /* Hide the middot separator before venue when coauthors are hidden */
+  .paper-title + .paper-coauthors + .paper-venue::before {
+    content: "";
   }
 }
