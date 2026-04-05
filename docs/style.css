@@ -272,7 +272,8 @@ a:active {
     margin-bottom: 8px;
   }
 
-  /* On phone, hide coauthors, links, and media — show only title + venue */
+  /* On phone, hide date, coauthors, links, and media — show only title + venue */
+  .paper-date,
   .paper-coauthors,
   .paper-links,
   .paper-media {
