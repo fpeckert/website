@@ -17,9 +17,9 @@
     .nav-wrapper ul { list-style:none; padding:0; margin:8px 0 0 0; }
     .nav-wrapper ul li { display:inline-block; margin-right:14px; }
     .nav-wrapper ul li a { font-size:0.9em; }
-    .content-wrapper { max-width:850px; }
+    .content-wrapper { max-width:850px; font-size:0.9em; }
     .presenter-name { color: #CC8855; font-weight: bold; }
-    .section-label { color:#CC8855; font-weight:bold; font-size:1.2em; margin-top:30px; display:block; }
+    .section-label { color:#CC8855; font-weight:bold; margin-right:4px; }
   </style>
 </head>
 <body>
@@ -38,54 +38,31 @@
     </div>
 
     <div class='content-wrapper fade-in'>
-      <p style="margin: 12px 0 6px 0; font-size: 0.9em;">Imputed county-industry employment data from the Census Bureau's County Business Patterns, 1975&ndash;2018.</p>
-      <p style="margin: 0 0 6px 0; font-size: 0.85em; color: rgba(255,253,218,.5);">by <span class="presenter-name">Eckert</span> &middot; <span class="presenter-name">Fort</span> &middot; <span class="presenter-name">Schott</span> &middot; <span class="presenter-name">Yang</span></p>
-      <p style="margin: 0 0 18px 0; font-size: 0.85em; color: rgba(255,253,218,.5);">paper: <a target="_blank" href="./efsy.pdf" style="color:#CC8855;">Imputing Missing Values in the US Census Bureau's County Business Patterns</a> &middot; <a target="_blank" href="https://www.nber.org/papers/w26632" style="color:#CC8855;">NBER #26632</a></p>
+      <p style="margin: 12px 0 18px 0; font-size: 0.9em;">Imputed county-industry employment data from the Census Bureau's County Business Patterns, 1975&ndash;2018.</p>
 
-      <span class="section-label">abstract</span>
-      <p style="font-size: 0.85em; color: rgba(255,253,218,.5);">
-        The County Business Patterns data published by the US Census Bureau track employment by county and industry from 1946 to the present. Two features of the data limit their usefulness to researchers: (1) employment for the majority of county-industry cells is suppressed to protect confidentiality, and (2) industry classifications change over time. We address both issues. First, we develop a linear programming method that exploits the large set of adding-up constraints implicit in the hierarchical arrangement of the data to impute missing employment. Second, we provide concordances to map all data to a consistent set of industry codes. Finally, we construct a user-friendly, 1975 to 2018 county-level panel that classifies industries according to a consistent set of 2012 NAICS codes in all years.
-      </p>
+      <p><span class="section-label">collaborators</span> Eckert &middot; Fort &middot; Schott &middot; Yang</p>
+      <p><span class="section-label">paper</span> <a target="_blank" href="./efsy.pdf">Imputing Missing Values in the US Census Bureau's County Business Patterns</a> &middot; <a target="_blank" href="https://www.nber.org/papers/w26632">NBER #26632</a></p>
+      <p><span class="section-label">info</span> The County Business Patterns data published by the US Census Bureau track employment by county and industry from 1946 to the present. Two features of the data limit their usefulness to researchers: (1) employment for the majority of county-industry cells is suppressed to protect confidentiality, and (2) industry classifications change over time. We address both issues. First, we develop a linear programming method that exploits the large set of adding-up constraints implicit in the hierarchical arrangement of the data to impute missing employment. Second, we provide concordances to map all data to a consistent set of industry codes. Finally, we construct a user-friendly, 1975 to 2018 county-level panel that classifies industries according to a consistent set of 2012 NAICS codes in all years.</p>
 
-      <span class="section-label">updates</span>
-      <p style="font-size: 0.85em; color: rgba(255,253,218,.5);">
-        We may periodically update the imputed data. If you enter an email address below we will notify you of such changes.
-      </p>
+      <p><span class="section-label">updates</span> <span style="color: rgba(255,253,218,.5);">we may periodically update the imputed data. if you enter an email address below we will notify you of such changes.</span></p>
 
       <!-- Mailchimp Signup Form -->
-      <div id="mc_embed_signup">
-        <form action="https://fpeckert.us5.list-manage.com/subscribe/post?u=67279f402667a4d862564ce93&amp;id=a9f3ef0384" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-            <div class="mc-field-group">
-              <label for="mce-EMAIL">Email Address </label>
-              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-            </div>
-            <div id="mce-responses" class="clear">
-              <div class="response" id="mce-error-response" style="display:none"></div>
-              <div class="response" id="mce-success-response" style="display:none"></div>
-            </div>
-            <div style="position: absolute; left: -5000px;" aria-hidden="true">
-              <input type="text" name="b_67279f402667a4d862564ce93_a9f3ef0384" tabindex="-1" value="">
-            </div>
-            <div class="clear">
-              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-            </div>
-          </div>
-        </form>
-      </div>
+      <form action="https://fpeckert.us5.list-manage.com/subscribe/post?u=67279f402667a4d862564ce93&amp;id=a9f3ef0384" method="post" target="_blank" novalidate style="display:flex; align-items:center; gap:8px; margin:8px 0 16px 0;">
+        <input type="email" value="" name="EMAIL" placeholder="email address" id="mce-EMAIL" style="padding:6px 10px; font-size:0.9em; background:rgba(255,253,218,.1); border:1px solid rgba(255,253,218,.3); color:rgba(255,253,218,1); font-family:inherit; border-radius:3px;">
+        <div style="position:absolute; left:-5000px;" aria-hidden="true"><input type="text" name="b_67279f402667a4d862564ce93_a9f3ef0384" tabindex="-1" value=""></div>
+        <input type="submit" value="subscribe" style="padding:6px 14px; font-size:0.9em; background:#CC8855; color:rgba(40,43,51,1); border:none; font-family:inherit; font-weight:bold; cursor:pointer; border-radius:3px;">
+      </form>
 
-      <span class="section-label">full county&times;industry panel 1975&ndash;2018</span>
-      <p style="font-size: 0.85em;">
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_panel_native.csv.zip" download>Panel with Native Industry Codes</a> &middot;
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_panel_naics.csv.zip" download>Panel with Harmonized 2012 NAICS Industry Codes</a> &middot;
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_readme_panel.txt" download>Readme</a>
+      <p><span class="section-label">full county&times;industry panel 1975&ndash;2018</span>
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_panel_native.csv.zip" download>panel with native industry codes</a> &middot;
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_panel_naics.csv.zip" download>panel with harmonized 2012 NAICS industry codes</a> &middot;
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_readme_panel.txt" download>readme</a>
       </p>
-      <p style="font-size: 0.8em; color: rgba(255,253,218,.5);">
-        <span class="presenter-name">Note:</span> Census changed the way the CBP data are reported starting in 2017. For these years, Census now perturbs cells with small employment counts, making these data fundamentally different from earlier periods. We do not impute data in those years since there are no missing cells in the data. We nevertheless appended 2017 and 2018 to the panel for completeness. Note that the 2017 and 2018 data are reported on a NAICS2017 basis.
+      <p style="color: rgba(255,253,218,.5);">
+        note: census changed the way the CBP data are reported starting in 2017. for these years, census now perturbs cells with small employment counts, making these data fundamentally different from earlier periods. we do not impute data in those years since there are no missing cells in the data. we nevertheless appended 2017 and 2018 to the panel for completeness. note that the 2017 and 2018 data are reported on a NAICS2017 basis.
       </p>
 
-      <span class="section-label">raw and imputed cbp files</span>
-      <p style="font-size: 0.85em;">
+      <p><span class="section-label">raw and imputed cbp files</span>
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1975.zip" download>1975</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1976.zip" download>1976</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1977.zip" download>1977</a>&nbsp;
@@ -128,25 +105,20 @@
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2014.zip" download>2014</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2015.zip" download>2015</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2016.zip" download>2016</a>&nbsp;
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_readme_raw.txt" download>Readme</a>
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_readme_raw.txt" download>readme</a>
       </p>
 
-      <span class="section-label">concordances</span>
-      <p style="font-size: 0.85em;">
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_raw_concordances.zip" download>Raw Industry Concordance Files</a> &middot;
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_final_concordances.zip" download>Final Industry Concordance Files</a> &middot;
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_readme_concordance_revised.txt" download>Readme</a>
+      <p><span class="section-label">concordances</span>
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_raw_concordances.zip" download>raw industry concordance files</a> &middot;
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_final_concordances.zip" download>final industry concordance files</a> &middot;
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_readme_concordance_revised.txt" download>readme</a>
       </p>
 
-      <span class="section-label">code</span>
-      <p style="font-size: 0.85em;">
-        All codes needed to replicate the imputation are on our public <a href="https://github.com/fpeckert/cbp_database_public" style="color:#CC8855;">Github repo</a>.
+      <p><span class="section-label">code</span>
+        all codes needed to replicate the imputation are on our public <a href="https://github.com/fpeckert/cbp_database_public">github repo</a>.
       </p>
 
-      <span class="section-label">citation</span>
-      <p style="font-size: 0.85em; color: rgba(255,253,218,.5);">
-        Fabian Eckert, Teresa C. Fort, Peter K. Schott, and Natalie J. Yang. &ldquo;Imputing Missing Values in the US Census Bureau's County Business Patterns.&rdquo; <i>NBER Working Paper #26632, 2021</i>
-      </p>
+      <p><span class="section-label">citation</span> Fabian Eckert, Teresa C. Fort, Peter K. Schott, and Natalie J. Yang. &ldquo;Imputing Missing Values in the US Census Bureau's County Business Patterns.&rdquo; NBER Working Paper #26632, 2021</p>
 
       <br><br><br>
     </div>

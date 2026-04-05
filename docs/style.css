@@ -149,8 +149,7 @@ a:active {
 }
 
 .paper-date {
-  color: rgba(255,253,218,1);
-  font-size: 0.85em;
+  color: rgba(255,253,218,1) !important;
   margin-right: 2px;
 }
 
