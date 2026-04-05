@@ -149,8 +149,9 @@ a:active {
 }
 
 .paper-date {
-  color: rgba(255,253,218,.4);
+  color: rgba(255,253,218,1);
   font-size: 0.85em;
+  margin-right: 2px;
 }
 
 .paper-coauthors {
@@ -167,6 +168,7 @@ a:active {
   color: rgba(255,253,218,.7);
 }
 
+.paper-title + .paper-coauthors::before,
 .paper-coauthors + .paper-venue::before,
 .paper-coauthors + .paper-links::before,
 .paper-venue + .paper-links::before {
@@ -251,7 +253,8 @@ a:active {
     margin-bottom: 4px;
   }
 
-  .nav-wrapper ul li a {
+  .nav-wrapper ul li a,
+  .nav-wrapper ul li span {
     font-size: 0.85em;
   }
 

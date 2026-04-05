@@ -1,62 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <title>County Business Patterns Database</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="stylesheet" type="text/css" href="../style.css">
-  <script src='./script-papers.js'></script>
+  <style>
+    body { margin:0; font-family:Helvetica Neue Light,Arial,sans-serif; background:rgba(40,43,51,1); color:rgba(255,253,218,1); line-height:1.4; }
+    a { color:rgba(255,253,218,1); text-decoration:none; }
+    .spacing-box { height:50px; }
+    .main-wrapper { max-width:850px; margin:auto; padding:0 30px; box-sizing:border-box; }
+    .name-wrapper { margin-top:18px; font-size:0.8em; }
+    .name-wrapper h1 { margin:0; font-size:2em; }
+    .nav-wrapper { border-bottom:1px solid rgba(255,253,218,.2); padding-bottom:14px; margin-bottom:10px; }
+    .nav-wrapper ul { list-style:none; padding:0; margin:8px 0 0 0; }
+    .nav-wrapper ul li { display:inline-block; margin-right:14px; }
+    .nav-wrapper ul li a { font-size:0.9em; }
+    .content-wrapper { max-width:850px; }
+    .presenter-name { color: #CC8855; font-weight: bold; }
+    .section-label { color:#CC8855; font-weight:bold; font-size:1.2em; margin-top:30px; display:block; }
+  </style>
 </head>
 <body>
   <div class='spacing-box'></div>
   <div class='main-wrapper'>
 
     <div class='name-wrapper'>
-      <a href='../'>
-        <img src="all_emp_gif.gif" alt="Total Emp Gif" class="mapImage">
-        <h1>County Business Patterns Database</h1>
-      </a>
-    </div>
-
-    <div class='description-wrapper'>
-      <h2 class='marg-top'>
-        <font size="4">by
-          <a href='http://fpeckert.me/'>Fabian Eckert</a>,
-          <a href='http://faculty.tuck.dartmouth.edu/teresa-fort/'>Teresa C. Fort</a>,
-          <a href='https://faculty.som.yale.edu/peterschott/'>Peter K. Schott</a>, and
-          <a href='https://sites.google.com/view/natalieyang'>Natalie J. Yang</a>
-        </font>
-      </h2>
+      <h1>COUNTY BUSINESS PATTERNS DATABASE</h1>
     </div>
 
     <div class='nav-wrapper'>
-      <ul></ul>
+      <ul>
+        <li><a href="../">&#x21A9; main</a></li>
+        <li><span style="color:#CC8855; font-weight:bold;">data</span></li>
+      </ul>
     </div>
 
     <div class='content-wrapper fade-in'>
-      <br>
+      <p style="margin: 12px 0 6px 0; font-size: 0.9em;">Imputed county-industry employment data from the Census Bureau's County Business Patterns, 1975&ndash;2018.</p>
+      <p style="margin: 0 0 6px 0; font-size: 0.85em; color: rgba(255,253,218,.5);">by <span class="presenter-name">Eckert</span> &middot; <span class="presenter-name">Fort</span> &middot; <span class="presenter-name">Schott</span> &middot; <span class="presenter-name">Yang</span></p>
+      <p style="margin: 0 0 18px 0; font-size: 0.85em; color: rgba(255,253,218,.5);">paper: <a target="_blank" href="./efsy.pdf" style="color:#CC8855;">Imputing Missing Values in the US Census Bureau's County Business Patterns</a> &middot; <a target="_blank" href="https://www.nber.org/papers/w26632" style="color:#CC8855;">NBER #26632</a></p>
 
-      <div class='research-project'>
-        <p class='project-text'>
-          <a target="_blank" href="./efsy.pdf" title="open pdf in new window">Imputing Missing Values in the US Census Bureau's County Business Patterns</a>
-          [01/21]
-          <a target="_blank" class='no-underline' href="https://www.nber.org/papers/w26632">[NBER WP #26632]</a>
-          <br>
-        </p>
-      </div>
-
-      <br>
-
-      <p class='no-margin'><b>Abstract:</b></p>
-      <p class='small-font no-margin'>
+      <span class="section-label">abstract</span>
+      <p style="font-size: 0.85em; color: rgba(255,253,218,.5);">
         The County Business Patterns data published by the US Census Bureau track employment by county and industry from 1946 to the present. Two features of the data limit their usefulness to researchers: (1) employment for the majority of county-industry cells is suppressed to protect confidentiality, and (2) industry classifications change over time. We address both issues. First, we develop a linear programming method that exploits the large set of adding-up constraints implicit in the hierarchical arrangement of the data to impute missing employment. Second, we provide concordances to map all data to a consistent set of industry codes. Finally, we construct a user-friendly, 1975 to 2018 county-level panel that classifies industries according to a consistent set of 2012 NAICS codes in all years.
       </p>
 
-      <br>
-
-      <p class='no-margin'><b>Updates:</b></p>
-      <p class='small-font no-margin'>
-        We may periodically update the imputed data. If your enter an email address below we will notify you of such changes.
+      <span class="section-label">updates</span>
+      <p style="font-size: 0.85em; color: rgba(255,253,218,.5);">
+        We may periodically update the imputed data. If you enter an email address below we will notify you of such changes.
       </p>
-      <br>
 
       <!-- Mailchimp Signup Form -->
       <div id="mc_embed_signup">
@@ -80,32 +74,23 @@
         </form>
       </div>
 
-      <p class='no-margin'><b>Full County&times;Industry Panel 1975-2018:</b></p>
-      <p class='small-font no-margin'>
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_panel_native.csv.zip" download>Panel with Native Industry Codes</a>
-        <br>
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_panel_naics.csv.zip" download>Panel with Harmonized 2012 NAICS Industry Codes</a>
-        <br>
+      <span class="section-label">full county&times;industry panel 1975&ndash;2018</span>
+      <p style="font-size: 0.85em;">
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_panel_native.csv.zip" download>Panel with Native Industry Codes</a> &middot;
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_panel_naics.csv.zip" download>Panel with Harmonized 2012 NAICS Industry Codes</a> &middot;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_readme_panel.txt" download>Readme</a>
-        <br>
-        <font color="#CD5C5C">Important:</font>
-        NB: Census changed the way the CBP data are reported starting in 2017.
-        For these years, Census now perturbs cells with small employment counts, making these data fundamentally different from earlier periods.
-        We do not impute data in those years since there are no missing cells in the data.
-        We nevertheless appended 2017 and 2018 to the panel for completeness.
-        Note that the 2017 and 2018 data are reported on a NAICS2017 basis.
+      </p>
+      <p style="font-size: 0.8em; color: rgba(255,253,218,.5);">
+        <span class="presenter-name">Note:</span> Census changed the way the CBP data are reported starting in 2017. For these years, Census now perturbs cells with small employment counts, making these data fundamentally different from earlier periods. We do not impute data in those years since there are no missing cells in the data. We nevertheless appended 2017 and 2018 to the panel for completeness. Note that the 2017 and 2018 data are reported on a NAICS2017 basis.
       </p>
 
-      <br>
-
-      <p class='no-margin'><b>Raw and Imputed CBP Files:</b></p>
-      <p class='small-font no-margin'>
+      <span class="section-label">raw and imputed cbp files</span>
+      <p style="font-size: 0.85em;">
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1975.zip" download>1975</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1976.zip" download>1976</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1977.zip" download>1977</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1978.zip" download>1978</a>&nbsp;
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1979.zip" download>1979</a>
-        <br>
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1979.zip" download>1979</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1980.zip" download>1980</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1981.zip" download>1981</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1982.zip" download>1982</a>&nbsp;
@@ -115,8 +100,7 @@
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1986.zip" download>1986</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1987.zip" download>1987</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1988.zip" download>1988</a>&nbsp;
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1989.zip" download>1989</a>
-        <br>
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1989.zip" download>1989</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1990.zip" download>1990</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1991.zip" download>1991</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1992.zip" download>1992</a>&nbsp;
@@ -126,8 +110,7 @@
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1996.zip" download>1996</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1997.zip" download>1997</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1998.zip" download>1998</a>&nbsp;
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1999.zip" download>1999</a>
-        <br>
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_1999.zip" download>1999</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2000.zip" download>2000</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2001.zip" download>2001</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2002.zip" download>2002</a>&nbsp;
@@ -137,63 +120,35 @@
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2006.zip" download>2006</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2007.zip" download>2007</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2008.zip" download>2008</a>&nbsp;
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2009.zip" download>2009</a>
-        <br>
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2009.zip" download>2009</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2010.zip" download>2010</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2011.zip" download>2011</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2012.zip" download>2012</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2013.zip" download>2013</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2014.zip" download>2014</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2015.zip" download>2015</a>&nbsp;
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2016.zip" download>2016</a>
-        <br>
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_2016.zip" download>2016</a>&nbsp;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_readme_raw.txt" download>Readme</a>
       </p>
 
-      <br>
-
-      <p class='no-margin'><b>Concordances:</b></p>
-      <p class='small-font no-margin'>
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_raw_concordances.zip" download>Raw Industry Concordance Files</a>
-        <br>
-        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_final_concordances.zip" download>Final Industry Concordance Files</a>
-        <br>
+      <span class="section-label">concordances</span>
+      <p style="font-size: 0.85em;">
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_raw_concordances.zip" download>Raw Industry Concordance Files</a> &middot;
+        <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_final_concordances.zip" download>Final Industry Concordance Files</a> &middot;
         <a href="https://github.com/fpeckert/website/releases/download/cbp-data/efsy_readme_concordance_revised.txt" download>Readme</a>
       </p>
 
-      <br>
-
-      <p class='no-margin'><b>Cleaning and Imputation Codes:</b></p>
-      <p class='small-font no-margin'>
-        Find all codes needed to replicate the imputation on our public <a href='https://github.com/fpeckert/cbp_database_public'>Github Repo</a>.
+      <span class="section-label">code</span>
+      <p style="font-size: 0.85em;">
+        All codes needed to replicate the imputation are on our public <a href="https://github.com/fpeckert/cbp_database_public" style="color:#CC8855;">Github repo</a>.
       </p>
 
-      <br>
-
-      <p class='no-margin'><b>If you use the data or code posted on this website please cite:</b></p>
-      <div class='research-project'>
-        <p class='project-text'>
-          Fabian Eckert, Teresa C. Fort, Peter K. Schott, and Natalie J. Yang. "Imputing Missing Values in the US Census Bureau's County Business Patterns." <i>NBER Working Paper #26632, 2021</i>
-        </p>
-        <div class='abstract-toggle-wrapper'>
-          <div class='abstract-text-wrapper'>
-            <p class='abstract-text slide-in'>
-              @techreport{eckert2021imputing,<br>
-              title={Imputing Missing Values in the US Census Bureau's County Business Patterns},<br>
-              author={Eckert, Fabian and Fort, Teresa C. and Schott, Peter K. and Yang, Natalie J.},<br>
-              year={2021},<br>
-              institution={National Bureau of Economic Research}<br>
-              }
-            </p>
-          </div>
-          <div class="toggle-wrapper">
-            <a href="#" class='abstract-toggle'></a>
-          </div>
-        </div>
-      </div>
+      <span class="section-label">citation</span>
+      <p style="font-size: 0.85em; color: rgba(255,253,218,.5);">
+        Fabian Eckert, Teresa C. Fort, Peter K. Schott, and Natalie J. Yang. &ldquo;Imputing Missing Values in the US Census Bureau's County Business Patterns.&rdquo; <i>NBER Working Paper #26632, 2021</i>
+      </p>
 
       <br><br><br>
-
     </div>
   </div>
 </body>
