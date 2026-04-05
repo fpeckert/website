@@ -13,7 +13,49 @@
 
     <!-- Name -->
     <div class='name-wrapper'>
-      <h1>FABIAN ECKERT</h1>
+      <h1 id="name-title" style="cursor:pointer">FABIAN ECKERT</h1>
+      <script>
+      document.getElementById('name-title').addEventListener('click', function() {
+        if (document.body.classList.contains('gravity-active')) return;
+        document.body.classList.add('gravity-active');
+
+        // Grab all visible block-level elements as whole units
+        var wrapper = document.querySelector('.main-wrapper');
+        var els = wrapper.querySelectorAll('h1, li, .info-item, .section-header, .nav-wrapper ul');
+        var viewH = window.innerHeight;
+
+        els.forEach(function(el) {
+          el.style.position = 'relative';
+          el.style.transition = 'none';
+          // Force reflow
+          el.offsetHeight;
+          var rect = el.getBoundingClientRect();
+          var distToBottom = viewH - rect.bottom;
+          var delay = Math.random() * 1200;
+          var duration = 600 + Math.random() * 500;
+          var rotation = (Math.random() - 0.5) * 90;
+          el.style.transition = 'transform ' + duration + 'ms cubic-bezier(0.4,0,1,1) ' + delay + 'ms';
+          el.style.transform = 'translateY(' + (distToBottom + 60) + 'px) rotate(' + rotation + 'deg)';
+        });
+
+        // Reassemble
+        setTimeout(function() {
+          els.forEach(function(el) {
+            el.style.transition = 'transform 800ms cubic-bezier(0,0,0.2,1)';
+            el.style.transform = 'translateY(0) rotate(0deg)';
+          });
+          // Clean up inline styles
+          setTimeout(function() {
+            els.forEach(function(el) {
+              el.style.position = '';
+              el.style.transition = '';
+              el.style.transform = '';
+            });
+            document.body.classList.remove('gravity-active');
+          }, 900);
+        }, 2500);
+      });
+      </script>
     </div>
 
     <!-- Navigation -->
@@ -32,7 +74,7 @@
 
       <!-- Info -->
       <div class="info-section">
-        <div class="info-item"><span class="label">affiliation:</span> assistant professor, <a target='_blank' href="https://economics.ucsd.edu/faculty-and-research/faculty-profiles/eckert.html">UCSD</a>, <a target='_blank' href="https://economics.ucsd.edu">econ</a> &middot; associate editor, <a target='_blank' href="https://www.sciencedirect.com/journal/journal-of-international-economics">JIE</a></div>
+        <div class="info-item"><span class="label">affiliation:</span> assistant professor, <a target='_blank' href="https://economics.ucsd.edu/faculty-and-research/faculty-profiles/eckert.html">UCSD</a> <a target='_blank' href="https://economics.ucsd.edu">econ</a> &middot; associate editor, <a target='_blank' href="https://www.sciencedirect.com/journal/journal-of-international-economics">JIE</a></div>
         <div class="info-item"><span class="label">interests:</span> trade, economic geography, macroeconomics</div>
         <div class="info-item" style="flex-basis: 100%;"><span class="label">contact:</span> fpe at ucsd dot edu</div>
       </div>
@@ -153,7 +195,7 @@
           </span>
         </li>
         <li>
-          <a class="paper-title" target="_blank" href="./efsy.pdf">Imputing Missing Values in the US Census Bureau's County Business Patterns</a>
+          <a class="paper-title" target="_blank" href="./efsy.pdf">Imputing Missing Values in the County Business Patterns</a>
           <span class="paper-date">[01/21]</span>
           <span class="paper-coauthors">&mdash; <a target="_blank" href="http://faculty.tuck.dartmouth.edu/teresa-fort/">Fort</a>, <a target="_blank" href="http://faculty.som.yale.edu/peterschott/">Schott</a>, <a target="_blank" href="https://sites.google.com/view/natalieyang">Yang</a></span>
           <br><span class="paper-links">
@@ -162,7 +204,7 @@
           </span>
         </li>
         <li>
-          <a class="paper-title" target="_blank" href="./eglp.pdf">A Method to Construct Geographical Crosswalks with an Application to US Counties since 1790</a>
+          <a class="paper-title" target="_blank" href="./eglp.pdf">A Method to Construct Geographical Crosswalks</a>
           <span class="paper-date">[02/20]</span>
           <span class="paper-coauthors">&mdash; <a target="_blank" href="https://agvirtz.github.io/">Gvirtz</a>, <a target="_blank" href="https://sites.google.com/view/jackliang">Liang</a>, <a target="_blank" href="https://mipeters.weebly.com/">Peters</a></span>
           <br><span class="paper-links">
