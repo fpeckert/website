@@ -93,7 +93,7 @@ a:active {
 .nav-wrapper ul li a {
   cursor: pointer;
   text-decoration: none;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 .content-wrapper {
@@ -113,7 +113,7 @@ a:active {
   flex-direction: column;
   gap: 0;
   margin-bottom: 6px;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 .info-item {
@@ -131,7 +131,7 @@ a:active {
   display: block;
   margin-top: 28px;
   margin-bottom: 8px;
-  font-size: 0.95em;
+  font-size: 0.85em;
   color: #CC8855;
 }
 
@@ -186,7 +186,7 @@ a:active {
 }
 
 .paper-venue {
-  font-size: 0.8em;
+  font-size: 0.85em;
 }
 
 .paper-venue a {
@@ -214,7 +214,7 @@ a:active {
 }
 
 .paper-media {
-  font-size: 0.7em;
+  font-size: 0.75em;
   color: rgba(255,253,218,.3);
 }
 

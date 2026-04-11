@@ -58,7 +58,7 @@ a:active { opacity: 0.8; }
 }
 .nav-wrapper ul { list-style-type: none; padding: 0; margin: 8px 0 0 0; }
 .nav-wrapper ul li { display: inline-block; margin-right: 14px; }
-.nav-wrapper ul li a { cursor: pointer; text-decoration: none; font-size: 0.9em; }
+.nav-wrapper ul li a { cursor: pointer; text-decoration: none; font-size: 0.85em; }
 .content-wrapper { width: 100%; max-width: 850px; box-sizing: border-box; margin: 0; }
 .content-wrapper a { cursor: pointer; }
 .info-section {
@@ -66,7 +66,7 @@ a:active { opacity: 0.8; }
   flex-direction: column;
   gap: 0;
   margin-bottom: 6px;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 .info-item { margin-bottom: 4px; }
 .info-item .label { color: #CC8855; font-weight: bold; margin-right: 6px; }
@@ -74,7 +74,7 @@ a:active { opacity: 0.8; }
   display: block;
   margin-top: 28px;
   margin-bottom: 8px;
-  font-size: 0.95em;
+  font-size: 0.85em;
   color: #CC8855;
 }
 .paper-list { list-style: none; padding: 0; margin: 0; }
@@ -95,13 +95,13 @@ a:active { opacity: 0.8; }
   content: " \00B7  ";
   color: rgba(255,253,218,.25);
 }
-.paper-venue { font-size: 0.8em; }
+.paper-venue { font-size: 0.85em; }
 .paper-venue a { color: #FF1493; text-decoration: none; }
 .paper-links { font-size: 0.75em; color: rgba(255,253,218,.35); }
 .paper-links a { color: rgba(255,253,218,.35); text-decoration: none; }
 .paper-links a + a::before { content: " \00B7  "; color: rgba(255,253,218,.25); }
 .paper-links a:hover { color: rgba(255,253,218,.7); }
-.paper-media { font-size: 0.7em; color: rgba(255,253,218,.3); }
+.paper-media { font-size: 0.75em; color: rgba(255,253,218,.3); }
 .paper-media a { color: rgba(255,253,218,.3); text-decoration: none; margin-right: 3px; }
 .paper-media a:hover { color: rgba(255,253,218,.6); }
 .fade-in { animation: fadeIn 1s; }
@@ -121,21 +121,21 @@ a:active { opacity: 0.8; }
 }
   </style>
 
-  <!-- Prefetch top-nav pages -->
-  <link rel="prefetch" href="./cv.html">
+  <!-- High-priority prefetch: under-revision papers + CV (loaded eagerly) -->
+  <link rel="prefetch" href="./cv.html" fetchpriority="high">
+  <link rel="prefetch" href="./fpe_cv.pdf" fetchpriority="high">
+  <link rel="prefetch" href="./cdc.pdf" fetchpriority="high">
+  <link rel="prefetch" href="./EGW.pdf" fetchpriority="high">
+  <link rel="prefetch" href="./ssc.pdf" fetchpriority="high">
+  <link rel="prefetch" href="./papers/ek_2024.pdf" fetchpriority="high">
+
+  <!-- Background prefetch: other top-nav pages -->
   <link rel="prefetch" href="./data.html">
   <link rel="prefetch" href="./events.html">
 
   <!-- Warm up connections to external nav targets -->
   <link rel="preconnect" href="https://scholar.google.com" crossorigin>
   <link rel="preconnect" href="https://x.com" crossorigin>
-
-  <!-- Prefetch main-page PDFs so clicks feel instant -->
-  <link rel="prefetch" href="./fpe_cv.pdf">
-  <link rel="prefetch" href="./cdc.pdf">
-  <link rel="prefetch" href="./EGW.pdf">
-  <link rel="prefetch" href="./ssc.pdf">
-  <link rel="prefetch" href="./papers/ek_2024.pdf">
   <link rel="prefetch" href="./CEM.pdf">
   <link rel="prefetch" href="./eckert_jmp_2018.pdf">
   <link rel="prefetch" href="./ejp_aea.pdf">
