@@ -5,7 +5,121 @@
   <title>Fabian Eckert</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="./favicon.png">
-  <link rel="stylesheet" type="text/css" href="./style.css">
+
+  <!-- Inlined from style.css for fastest first paint. KEEP IN SYNC with style.css. -->
+  <style>
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: 0.25s; }
+
+body {
+  margin: 0;
+  font-family: Helvetica Neue Light, Arial, Helvetica, sans-serif;
+  background: rgba(40,43,51,1);
+  overflow-x: hidden;
+  color: rgba(255,253,218,1);
+  line-height: 1.4;
+}
+::selection { background: #CD5C5C; color: #FFFDDA; }
+a {
+  font-family: Helvetica Neue Light, Arial, Helvetica, sans-serif;
+  color: rgba(255,253,218,1);
+  background-color: transparent;
+  text-decoration: none;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+a:hover { animation: scintillate 1.5s linear infinite; opacity: 1; }
+@keyframes scintillate {
+  0%   { color: #FF6B6B; }
+  15%  { color: #FFD93D; }
+  30%  { color: #6BCB77; }
+  45%  { color: #4D96FF; }
+  60%  { color: #9B59B6; }
+  75%  { color: #FF1493; }
+  90%  { color: #FF8C00; }
+  100% { color: #FF6B6B; }
+}
+a:active { opacity: 0.8; }
+.spacing-box { height: 50px; }
+.main-wrapper {
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+.name-wrapper { margin-top: 18px; text-align: left; font-size: 0.8em; }
+.name-wrapper h1 { margin: 0; font-size: 2em; }
+.nav-wrapper {
+  text-align: left;
+  border-bottom: 1px solid rgba(255,253,218,.2);
+  padding-bottom: 14px;
+  margin-bottom: 10px;
+}
+.nav-wrapper ul { list-style-type: none; padding: 0; margin: 8px 0 0 0; }
+.nav-wrapper ul li { display: inline-block; margin-right: 14px; }
+.nav-wrapper ul li a { cursor: pointer; text-decoration: none; font-size: 0.9em; }
+.content-wrapper { width: 100%; max-width: 850px; box-sizing: border-box; margin: 0; }
+.content-wrapper a { cursor: pointer; }
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 6px;
+  font-size: 0.9em;
+}
+.info-item { margin-bottom: 4px; }
+.info-item .label { color: #CC8855; font-weight: bold; margin-right: 6px; }
+.section-header {
+  display: block;
+  margin-top: 28px;
+  margin-bottom: 8px;
+  font-size: 0.95em;
+  color: #CC8855;
+}
+.paper-list { list-style: none; padding: 0; margin: 0; }
+.paper-list li { margin-bottom: 8px; line-height: 1.5; }
+.paper-title { text-decoration: none; }
+.paper-title:hover { opacity: 1; }
+.paper-date { color: rgba(255,253,218,.45); font-size: 0.85em; }
+.paper-coauthors { color: rgba(255,253,218,.45); font-size: 0.85em; }
+.paper-coauthors a { color: rgba(255,253,218,.45); text-decoration: none; }
+.paper-coauthors a:hover { color: rgba(255,253,218,.7); }
+.paper-title + .paper-date::before,
+.paper-date + .paper-coauthors::before,
+.paper-date + .paper-venue::before,
+.paper-date + .paper-links::before,
+.paper-coauthors + .paper-venue::before,
+.paper-coauthors + .paper-links::before,
+.paper-venue + .paper-links::before {
+  content: " \00B7  ";
+  color: rgba(255,253,218,.25);
+}
+.paper-venue { font-size: 0.8em; }
+.paper-venue a { color: #FF1493; text-decoration: none; }
+.paper-links { font-size: 0.75em; color: rgba(255,253,218,.35); }
+.paper-links a { color: rgba(255,253,218,.35); text-decoration: none; }
+.paper-links a + a::before { content: " \00B7  "; color: rgba(255,253,218,.25); }
+.paper-links a:hover { color: rgba(255,253,218,.7); }
+.paper-media { font-size: 0.7em; color: rgba(255,253,218,.3); }
+.paper-media a { color: rgba(255,253,218,.3); text-decoration: none; margin-right: 3px; }
+.paper-media a:hover { color: rgba(255,253,218,.6); }
+.fade-in { animation: fadeIn 1s; }
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+.no-underline { text-decoration: none; }
+@media (max-width: 600px) {
+  .spacing-box { height: 25px; }
+  .main-wrapper { max-width: 100%; padding: 0 16px; }
+  .name-wrapper h1 { font-size: 1.6em; }
+  .nav-wrapper ul li { margin-right: 10px; margin-bottom: 4px; }
+  .nav-wrapper ul li a, .nav-wrapper ul li span { font-size: 0.85em; }
+  .info-section { flex-direction: column; gap: 0; font-size: 0.85em; }
+  .section-header { margin-top: 22px; font-size: 0.9em; }
+  .paper-list li { margin-bottom: 8px; }
+  .paper-date, .paper-coauthors, .paper-links, .paper-media { display: none; }
+  .paper-venue::before { content: ""; }
+}
+  </style>
 
   <!-- Prefetch top-nav pages -->
   <link rel="prefetch" href="./cv.html">
@@ -107,11 +221,11 @@
       </div>
 
       <!-- Under Revision -->
-      <b class="section-header"><font color="#CC8855">under revision</font></b>
+      <b class="section-header">under revision</b>
       <ul class="paper-list">
         <li>
-          <span class="paper-date">[03/26]</span>
           <a class="paper-title" target="_blank" href="./cdc.pdf">Combinatorial Discrete Choice</a>
+          <span class="paper-date">03/26</span>
           <span class="paper-coauthors"><a target="_blank" href="https://arkolakis.com">Arkolakis</a>, <a target="_blank" href="https://rowanxshi.github.io/">Shi</a></span>
           <span class="paper-venue"><a target="_blank" href="#">aer (2nd round)</a></span>
           <span class="paper-links">
@@ -121,8 +235,8 @@
           </span>
         </li>
         <li>
-          <span class="paper-date">[10/25]</span>
           <a class="paper-title" target="_blank" href="./EGW.pdf">Urban-Biased Growth</a>
+          <span class="paper-date">10/25</span>
           <span class="paper-coauthors"><a target="_blank" href="http://www.sganapati.com">Ganapati</a>, <a target="_blank" href="https://www.conor-walsh.com/">Walsh</a></span>
           <span class="paper-venue"><a target="_blank" href="#">jpe</a></span>
           <span class="paper-links">
@@ -130,8 +244,8 @@
           </span>
         </li>
         <li>
-          <span class="paper-date">[06/25]</span>
           <a class="paper-title" target="_blank" href="./ssc.pdf">Spatial Structural Change</a>
+          <span class="paper-date">06/25</span>
           <span class="paper-coauthors"><a target="_blank" href="https://mipeters.weebly.com/">Peters</a></span>
           <span class="paper-venue"><a target="_blank" href="#">restud</a></span>
           <span class="paper-links">
@@ -140,8 +254,8 @@
           </span>
         </li>
         <li>
-          <span class="paper-date">[04/24]</span>
           <a class="paper-title" target="_blank" href="./papers/ek_2024.pdf">The Geography of Opportunity</a>
+          <span class="paper-date">04/24</span>
           <span class="paper-coauthors"><a target="_blank" href="https://sites.google.com/view/tkleineberg/home">Kleineberg</a></span>
           <span class="paper-venue"><a target="_blank" href="#">jpe</a></span>
           <span class="paper-links">
@@ -151,28 +265,28 @@
       </ul>
 
       <!-- Working Papers -->
-      <b class="section-header"><font color="#CC8855">working papers</font></b>
+      <b class="section-header">working papers</b>
       <ul class="paper-list">
         <li>
-          <span class="paper-date">[07/23]</span>
           <a class="paper-title" target="_blank" href="./CEM.pdf">Transportation Infrastructure and City-Center Accessibility</a>
+          <span class="paper-date">07/23</span>
           <span class="paper-coauthors"><a target="_blank" href="https://www.lucasconwell.com/">Conwell</a>, <a target="_blank" href="https://faculty.som.yale.edu/mushfiqmobarak/">Mobarak</a></span>
           <span class="paper-links">
             <a target="_blank" href="http://www.nber.org/papers/w30877">nber</a>
           </span>
         </li>
         <li>
-          <span class="paper-date">[02/19]</span>
           <a class="paper-title" target="_blank" href="./eckert_jmp_2018.pdf">Tradable Services and the Fragmentation of the U.S. Economy</a>
+          <span class="paper-date">02/19</span>
         </li>
       </ul>
 
       <!-- Publications -->
-      <b class="section-header"><font color="#CC8855">publications</font></b>
+      <b class="section-header">publications</b>
       <ul class="paper-list">
         <li>
-          <span class="paper-date">[05/23]</span>
           <a class="paper-title" target="_blank" href="./ejp_aea.pdf">Sprouting Cities: How Rural America Industrialized</a>
+          <span class="paper-date">05/23</span>
           <span class="paper-coauthors"><a target="_blank" href="https://economics.ucsd.edu/graduate-program/about/grad-profiles/cohort%202021/Juneau-john.html">Juneau</a>, <a target="_blank" href="https://mipeters.weebly.com">Peters</a></span>
           <span class="paper-venue"><a target="_blank" href="https://doi.org/10.1257/pandp.20231075">aea p&amp;p 2023</a></span>
           <span class="paper-links">
@@ -180,8 +294,8 @@
           </span>
         </li>
         <li>
-          <span class="paper-date">[04/22]</span>
           <a class="paper-title" target="_blank" href="https://doi.org/10.1016/j.jue.2022.103454">The Return to Big City Experience</a>
+          <span class="paper-date">04/22</span>
           <span class="paper-coauthors"><a target="_blank" href="https://sites.google.com/site/econhejlesen/">Hejlesen</a>, <a target="_blank" href="https://www.conor-walsh.com/">Walsh</a></span>
           <span class="paper-venue"><a target="_blank" href="https://doi.org/10.1016/j.jue.2022.103454">jue 2022</a></span>
           <span class="paper-links">
@@ -190,8 +304,8 @@
           </span>
         </li>
         <li>
-          <span class="paper-date">[01/22]</span>
           <a class="paper-title" target="_blank" href="./aegw_rsue22.pdf">The Geography of Remote Work</a>
+          <span class="paper-date">01/22</span>
           <span class="paper-coauthors"><a target="_blank" href="https://www.lukasalthoff.com/">Althoff</a>, <a target="_blank" href="http://www.sganapati.com">Ganapati</a>, <a target="_blank" href="https://www.conor-walsh.com/">Walsh</a></span>
           <span class="paper-venue"><a target="_blank" href="https://doi.org/10.1016/j.regsciurbeco.2022.103770">rsue 2022</a></span>
           <span class="paper-links">
@@ -204,11 +318,11 @@
       </ul>
 
       <!-- Short Papers -->
-      <b class="section-header"><font color="#CC8855">short papers</font></b>
+      <b class="section-header">short papers</b>
       <ul class="paper-list">
         <li>
-          <span class="paper-date">[07/22]</span>
           <a class="paper-title" target="_blank" href="./elmmss.pdf">The Early County Business Pattern Files</a>
+          <span class="paper-date">07/22</span>
           <span class="paper-coauthors">Lam, <a target="_blank" href="https://scholar.princeton.edu/atif/home">Mian</a>, <a target="_blank" href="https://www.karstenmueller.com">Muller</a>, Schwalb, <a target="_blank" href="https://amirsufi.net">Sufi</a></span>
           <span class="paper-links">
             <a target="_blank" href="https://www.nber.org/papers/w30578">nber</a>
@@ -216,8 +330,8 @@
           </span>
         </li>
         <li>
-          <span class="paper-date">[01/21]</span>
           <a class="paper-title" target="_blank" href="./efsy.pdf">Imputing Missing Values in the County Business Patterns</a>
+          <span class="paper-date">01/21</span>
           <span class="paper-coauthors"><a target="_blank" href="http://faculty.tuck.dartmouth.edu/teresa-fort/">Fort</a>, <a target="_blank" href="http://faculty.som.yale.edu/peterschott/">Schott</a>, <a target="_blank" href="https://sites.google.com/view/natalieyang">Yang</a></span>
           <span class="paper-links">
             <a target="_blank" href="https://www.nber.org/papers/w26632">nber</a>
@@ -225,8 +339,8 @@
           </span>
         </li>
         <li>
-          <span class="paper-date">[02/20]</span>
           <a class="paper-title" target="_blank" href="./eglp.pdf">A Method to Construct Geographical Crosswalks</a>
+          <span class="paper-date">02/20</span>
           <span class="paper-coauthors"><a target="_blank" href="https://agvirtz.github.io/">Gvirtz</a>, <a target="_blank" href="https://sites.google.com/view/jackliang">Liang</a>, <a target="_blank" href="https://mipeters.weebly.com/">Peters</a></span>
           <span class="paper-links">
             <a target="_blank" href="https://www.nber.org/papers/w26770">nber</a>

@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+@view-transition { navigation: auto; }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.25s;
+}
+
 body {
   margin: 0;
   font-family: Helvetica Neue Light, Arial, Helvetica, sans-serif;
@@ -122,9 +129,10 @@ a:active {
 /* Section headers */
 .section-header {
   display: block;
-  margin-top: 22px;
-  margin-bottom: 6px;
+  margin-top: 28px;
+  margin-bottom: 8px;
   font-size: 0.95em;
+  color: #CC8855;
 }
 
 /* Compact paper list */
@@ -135,8 +143,8 @@ a:active {
 }
 
 .paper-list li {
-  margin-bottom: 6px;
-  line-height: 1.35;
+  margin-bottom: 8px;
+  line-height: 1.5;
 }
 
 .paper-title {
@@ -144,13 +152,12 @@ a:active {
 }
 
 .paper-title:hover {
-  color: #CD5C5C !important;
   opacity: 1;
 }
 
 .paper-date {
-  color: rgba(255,253,218,1) !important;
-  margin-right: 2px;
+  color: rgba(255,253,218,.45);
+  font-size: 0.85em;
 }
 
 .paper-coauthors {
@@ -167,7 +174,10 @@ a:active {
   color: rgba(255,253,218,.7);
 }
 
-.paper-title + .paper-coauthors::before,
+.paper-title + .paper-date::before,
+.paper-date + .paper-coauthors::before,
+.paper-date + .paper-venue::before,
+.paper-date + .paper-links::before,
 .paper-coauthors + .paper-venue::before,
 .paper-coauthors + .paper-links::before,
 .paper-venue + .paper-links::before {
@@ -280,8 +290,6 @@ a:active {
     display: none;
   }
 
-  /* Hide the middot separator before venue when coauthors are hidden */
-  .paper-title + .paper-coauthors + .paper-venue::before {
-    content: "";
-  }
+  /* Hide the middot separator before venue when date/coauthors are hidden */
+  .paper-venue::before { content: ""; }
 }
