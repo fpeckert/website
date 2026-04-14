@@ -48,16 +48,22 @@ a:active { opacity: 0.8; }
   padding: 0 30px;
   box-sizing: border-box;
 }
-.name-wrapper { margin-top: 18px; text-align: left; font-size: 0.8em; }
+.name-wrapper { text-align: left; font-size: 0.8em; }
 .name-wrapper h1 { margin: 0; font-size: 2em; }
-.nav-wrapper {
-  text-align: left;
+.header-wrapper {
+  margin-top: 18px;
+  max-width: 680px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
   border-bottom: 1px solid rgba(255,253,218,.2);
   padding-bottom: 14px;
   margin-bottom: 10px;
 }
+.nav-wrapper { text-align: right; }
 .nav-wrapper ul { list-style-type: none; padding: 0; margin: 8px 0 0 0; }
-.nav-wrapper ul li { display: inline-block; margin-right: 14px; }
+.nav-wrapper ul li { display: inline-block; margin-left: 14px; }
 .nav-wrapper ul li a { cursor: pointer; text-decoration: none; font-size: 0.85em; }
 .content-wrapper { width: 100%; max-width: 850px; box-sizing: border-box; margin: 0; }
 .content-wrapper a { cursor: pointer; }
@@ -66,7 +72,7 @@ a:active { opacity: 0.8; }
   flex-direction: column;
   gap: 0;
   margin-bottom: 6px;
-  font-size: 0.85em;
+  font-size: 1em;
 }
 .info-item { margin-bottom: 4px; }
 .info-item .label { color: #CC8855; font-weight: bold; margin-right: 6px; }
@@ -111,9 +117,11 @@ a:active { opacity: 0.8; }
   .spacing-box { height: 25px; }
   .main-wrapper { max-width: 100%; padding: 0 16px; }
   .name-wrapper h1 { font-size: 1.6em; }
-  .nav-wrapper ul li { margin-right: 10px; margin-bottom: 4px; }
+  .header-wrapper { flex-direction: column; align-items: stretch; gap: 4px; }
+  .nav-wrapper { text-align: left; }
+  .nav-wrapper ul li { margin-left: 0; margin-right: 10px; margin-bottom: 4px; }
   .nav-wrapper ul li a, .nav-wrapper ul li span { font-size: 0.85em; }
-  .info-section { flex-direction: column; gap: 0; font-size: 0.85em; }
+  .info-section { flex-direction: column; gap: 0; font-size: 1em; }
   .section-header { margin-top: 22px; font-size: 0.9em; }
   .paper-list li { margin-bottom: 8px; padding-left: 1em; text-indent: -1em; }
   .paper-date, .paper-coauthors, .paper-links, .paper-media { display: none; }
@@ -152,7 +160,8 @@ a:active { opacity: 0.8; }
   <div class='spacing-box'></div>
   <div class='main-wrapper'>
 
-    <!-- Name -->
+    <!-- Header: name (left) + nav (right) -->
+    <div class='header-wrapper'>
     <div class='name-wrapper'>
       <h1 id="name-title" style="cursor:pointer">FABIAN ECKERT</h1>
       <script>
@@ -209,15 +218,16 @@ a:active { opacity: 0.8; }
         <li><a href='https://x.com/fpeckert'>x</a></li>
       </ul>
     </div>
+    </div>
 
     <!-- Main Content -->
     <div class='content-wrapper'>
 
       <!-- Info -->
       <div class="info-section">
-        <div class="info-item"><span class="label">affiliation</span> assistant professor, <a target='_blank' href="https://economics.ucsd.edu/faculty-and-research/faculty-profiles/eckert.html">ucsd</a> <a target='_blank' href="https://economics.ucsd.edu">econ</a> &middot; associate editor, <a target='_blank' href="https://www.sciencedirect.com/journal/journal-of-international-economics">jie</a></div>
-        <div class="info-item"><span class="label">interests</span> trade, economic geography, macroeconomics</div>
-        <div class="info-item" style="flex-basis: 100%;"><span class="label">contact</span> fpe at ucsd dot edu</div>
+        <div class="info-item">assistant professor, <a target='_blank' href="https://economics.ucsd.edu/faculty-and-research/faculty-profiles/eckert.html">ucsd</a> <a target='_blank' href="https://economics.ucsd.edu">econ</a> &middot; associate editor, <a target='_blank' href="https://www.sciencedirect.com/journal/journal-of-international-economics">jie</a></div>
+        <div class="info-item">trade, economic geography, macroeconomics</div>
+        <div class="info-item">fpe at ucsd dot edu</div>
       </div>
 
       <!-- Under Revision -->

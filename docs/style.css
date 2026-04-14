@@ -62,9 +62,20 @@ a:active {
 }
 
 .name-wrapper {
-  margin-top: 18px;
   text-align: left;
   font-size: 0.8em;
+}
+
+.header-wrapper {
+  margin-top: 18px;
+  max-width: 680px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255,253,218,.2);
+  padding-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .name-wrapper h1 {
@@ -73,10 +84,7 @@ a:active {
 }
 
 .nav-wrapper {
-  text-align: left;
-  border-bottom: 1px solid rgba(255,253,218,.2);
-  padding-bottom: 14px;
-  margin-bottom: 10px;
+  text-align: right;
 }
 
 .nav-wrapper ul {
@@ -87,7 +95,7 @@ a:active {
 
 .nav-wrapper ul li {
   display: inline-block;
-  margin-right: 14px;
+  margin-left: 14px;
 }
 
 .nav-wrapper ul li a {
@@ -113,7 +121,7 @@ a:active {
   flex-direction: column;
   gap: 0;
   margin-bottom: 6px;
-  font-size: 0.85em;
+  font-size: 1em;
 }
 
 .info-item {
@@ -257,7 +265,18 @@ a:active {
     font-size: 1.6em;
   }
 
+  .header-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .nav-wrapper {
+    text-align: left;
+  }
+
   .nav-wrapper ul li {
+    margin-left: 0;
     margin-right: 10px;
     margin-bottom: 4px;
   }
