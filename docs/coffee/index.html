@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Faculty Lounge Coffee — Fact Sheet for Marc-Andreas Muendler</title>
+<style>
+  @page {
+    size: Letter;
+    margin: 0.5in;
+  }
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --rule: #d8d4cc;
+    --accent: #8a6d3b;
+    --accent-soft: #f5efe3;
+    --panel: #faf8f3;
+    --bar: #8a6d3b;
+    --bar-soft: #d8c9a8;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #ffffff;
+    color: var(--ink);
+    font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+  .sheet {
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 0.35in 0.1in;
+  }
+
+  /* Masthead */
+  .mast {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .mast-left .eyebrow {
+    font-size: 8.5pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 6px;
+    font-weight: 500;
+  }
+  .mast-left h1 {
+    font-size: 22pt;
+    line-height: 1.05;
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+  .mast-left h1 .thin { color: var(--muted); font-weight: 200; }
+  .mast-right {
+    text-align: right;
+    font-size: 8.5pt;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
+  .mast-right strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 9pt;
+    letter-spacing: 0;
+  }
+
+  /* Intro */
+  .lede {
+    font-size: 11pt;
+    color: var(--ink);
+    margin: 0 0 24px;
+    max-width: 6.2in;
+    line-height: 1.5;
+  }
+  .lede strong { font-weight: 500; }
+
+  /* Section */
+  .section {
+    margin-bottom: 22px;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 6px;
+  }
+  .section-num {
+    font-size: 9pt;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.15em;
+  }
+  .section-head h2 {
+    font-size: 13pt;
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+
+  /* Grid layouts */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .grid-kit { display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; align-items: start; }
+
+  /* Machine card */
+  .machine-card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 16px 18px;
+  }
+  .machine-card .tag {
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .machine-card h3 {
+    font-size: 14pt;
+    margin: 0 0 2px;
+    font-weight: 500;
+  }
+  .machine-card .sub {
+    font-size: 9.5pt;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  .machine-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 9.5pt;
+  }
+  .machine-card ul li {
+    padding: 4px 0;
+    border-bottom: 1px dotted var(--rule);
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .machine-card ul li:last-child { border-bottom: none; }
+  .machine-card ul li .k { color: var(--muted); font-size: 9pt; }
+  .machine-card ul li .v { text-align: right; }
+
+  /* Image holder */
+  .img-wrap {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+  }
+  .img-wrap img {
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+  }
+
+  /* Capability chips */
+  .caps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .chip {
+    font-size: 8.5pt;
+    padding: 3px 8px;
+    border: 1px solid var(--rule);
+    background: #ffffff;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .chip.milk { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+  /* Survey */
+  .survey-wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 22px; align-items: start; }
+  .chart {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 14px 16px;
+  }
+  .chart h4 {
+    font-size: 9pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px;
+    font-weight: 500;
+  }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 32px 1fr 54px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    font-size: 9.5pt;
+  }
+  .bar-row .label { color: var(--ink); font-weight: 500; text-align: right; }
+  .bar-row .track {
+    height: 14px;
+    background: #ece8de;
+    position: relative;
+  }
+  .bar-row .fill {
+    height: 100%;
+    background: var(--bar);
+  }
+  .bar-row .fill.soft { background: var(--bar-soft); }
+  .bar-row .val { color: var(--muted); font-size: 9pt; text-align: right; font-variant-numeric: tabular-nums; }
+
+  .survey-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .stat {
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 12px;
+  }
+  .stat .n {
+    font-size: 20pt;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+  .stat .l {
+    font-size: 9pt;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* Budget box */
+  .budget {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    padding: 18px 22px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+  .budget-left .eyebrow {
+    font-size: 8.5pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 0 4px;
+  }
+  .budget-left h3 {
+    font-size: 24pt;
+    font-weight: 300;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+  .budget-left h3 .unit {
+    font-size: 11pt;
+    color: var(--muted);
+    font-weight: 400;
+    margin-left: 4px;
+  }
+  .budget-left p {
+    margin: 0;
+    font-size: 9.5pt;
+    color: var(--muted);
+  }
+  .budget-right {
+    font-size: 9pt;
+    border-left: 1px solid var(--accent);
+    padding-left: 20px;
+  }
+  .budget-right div {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+    border-bottom: 1px dotted var(--accent);
+  }
+  .budget-right div:last-child { border-bottom: none; }
+  .budget-right .k { color: var(--muted); }
+  .budget-right .v { font-variant-numeric: tabular-nums; font-weight: 500; }
+
+  /* Investment-case panels */
+  .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .case-panel {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 14px 16px;
+  }
+  .case-panel.anecdote { border-left: 3px solid var(--accent); }
+  .case-panel .tag {
+    font-size: 8.5pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .case-panel p {
+    font-size: 9.5pt;
+    margin: 0 0 8px;
+    line-height: 1.5;
+  }
+  .case-panel p:last-child { margin-bottom: 0; }
+  .case-panel cite {
+    font-size: 8.5pt;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .case-pullquote {
+    margin: 14px 0 0;
+    padding: 12px 16px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    font-size: 10.5pt;
+    line-height: 1.5;
+  }
+  .case-pullquote strong { font-weight: 500; }
+
+  /* Footer */
+  .footer {
+    margin-top: 22px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+    font-size: 8.5pt;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 0.02em;
+  }
+
+  @media print {
+    body { background: white; }
+    .sheet { padding: 0; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- Masthead -->
+  <div class="mast">
+    <div class="mast-left">
+      <p class="eyebrow">Faculty lounge coffee program — budget request</p>
+      <h1>Nespresso for <span class="thin">Brian C. Malk Hall</span></h1>
+    </div>
+    <div class="mast-right">
+      <strong>Prepared for Marc-Andreas Muendler</strong>
+      Head of Department
+      <br>UCSD Economics
+      <br>April 18, 2026
+    </div>
+  </div>
+
+  <!-- Lede -->
+  <p class="lede">
+    Paul Niehaus has approved the equipment purchase for the faculty lounge: a <strong>Momento 200</strong>
+    professional espresso machine with a complimentary side milk frother. This sheet summarizes the
+    machine, surveyed faculty demand, the case for the investment, and the <strong>monthly capsule
+    budget</strong> needed to keep the lounge supplied.
+  </p>
+
+  <!-- Section 1: The equipment -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>The equipment</h2>
+    </div>
+
+    <div class="grid-kit">
+      <div>
+        <div class="machine-card">
+          <div class="tag">Recommended &amp; approved</div>
+          <h3>Nespresso Momento 200</h3>
+          <p class="sub">Double brew-head professional espresso machine + side milk frother</p>
+          <ul>
+            <li><span class="k">Brew menu</span><span class="v">Ristretto · Espresso · Lungo · Americano</span></li>
+            <li><span class="k">Milk menu</span><span class="v">Cappuccino · Latte · Flat white (via frother)</span></li>
+            <li><span class="k">Throughput</span><span class="v">Two espressos simultaneously</span></li>
+            <li><span class="k">Capsule format</span><span class="v">Nespresso Professional (not Amazon)</span></li>
+            <li><span class="k">Warranty</span><span class="v">2 years, Nespresso-installed</span></li>
+            <li><span class="k">Contract</span><span class="v">None — one-time purchase</span></li>
+            <li><span class="k">Recycling</span><span class="v">Free Nespresso pickup program</span></li>
+          </ul>
+          <div class="caps">
+            <span class="chip">Ristretto</span>
+            <span class="chip">Espresso</span>
+            <span class="chip">Lungo</span>
+            <span class="chip">Americano</span>
+            <span class="chip">Hot water</span>
+            <span class="chip milk">Cappuccino</span>
+            <span class="chip milk">Latte</span>
+            <span class="chip milk">Flat white</span>
+          </div>
+        </div>
+      </div>
+      <div class="img-wrap">
+        <img src="momento200.png" alt="Nespresso Momento 200">
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Faculty demand -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Faculty demand</h2>
+    </div>
+
+    <div class="survey-wrap">
+      <div class="chart">
+        <h4>Weekly drinks per faculty member — 27 respondents</h4>
+
+        <div class="bar-row">
+          <div class="label">0</div>
+          <div class="track"><div class="fill soft" style="width: 25.9%;"></div></div>
+          <div class="val">7  ·  25.9%</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">1</div>
+          <div class="track"><div class="fill" style="width: 7.4%;"></div></div>
+          <div class="val">2  ·  7.4%</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">2</div>
+          <div class="track"><div class="fill" style="width: 3.7%;"></div></div>
+          <div class="val">1  ·  3.7%</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">3</div>
+          <div class="track"><div class="fill" style="width: 14.8%;"></div></div>
+          <div class="val">4  ·  14.8%</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">4</div>
+          <div class="track"><div class="fill" style="width: 11.1%;"></div></div>
+          <div class="val">3  ·  11.1%</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">5</div>
+          <div class="track"><div class="fill" style="width: 11.1%;"></div></div>
+          <div class="val">3  ·  11.1%</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">5+</div>
+          <div class="track"><div class="fill" style="width: 22.2%;"></div></div>
+          <div class="val">6  ·  22.2%</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">~3*</div>
+          <div class="track"><div class="fill soft" style="width: 3.7%;"></div></div>
+          <div class="val">1  ·  3.7%</div>
+        </div>
+        <p style="font-size: 8pt; color: var(--muted); margin: 10px 0 0; font-style: italic;">
+          *One respondent wrote in: "none without milk, probably around 3 if there is milk" — counted at 3.
+        </p>
+      </div>
+
+      <div class="survey-stats">
+        <div class="stat">
+          <div class="n">20 of 27</div>
+          <div class="l">Faculty who would use the machine (74%)</div>
+        </div>
+        <div class="stat">
+          <div class="n">~82</div>
+          <div class="l">Drinks per week, estimated total*</div>
+        </div>
+        <div class="stat">
+          <div class="n">~355</div>
+          <div class="l">Drinks per month (× 52 ÷ 12)</div>
+        </div>
+        <p style="font-size: 8pt; color: var(--muted); margin: 4px 0 0; font-style: italic;">
+          *Midpoints used; "5+" counted as 6.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Why this matters -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Why this matters</h2>
+    </div>
+
+    <p style="margin: 0 0 14px; font-size: 10.5pt;">
+      The faculty lounge exists, but today there is no reason to go there. Without a daily draw,
+      colleagues don't cross paths outside of scheduled meetings — and the informal conversations
+      where ideas sharpen, collaborations form, and students get mentored simply don't happen.
+      A good espresso machine is the cheapest, most reliable way to turn an empty room into a
+      shared anchor point.
+    </p>
+
+    <div class="case-grid">
+      <div class="case-panel anecdote">
+        <div class="tag">Fabian — what I've seen work</div>
+        <p>
+          At <strong>Princeton</strong>, we had this exact Nespresso machine in the department
+          lounge. It became the default stop after every seminar — the place where the real
+          discussion of the paper happened, and where junior faculty and students actually got
+          to speak with the speaker.
+        </p>
+        <p>
+          At <strong>Yale</strong>, the espresso machine anchored a post-lunch gathering for
+          the entire department. People came for coffee and stayed for the conversation.
+        </p>
+        <p>
+          Both departments treated the machine as research infrastructure, not a perk.
+        </p>
+      </div>
+
+      <div class="case-panel">
+        <div class="tag">What the research says</div>
+        <p>
+          Proximity and unplanned encounters are well-documented drivers of academic
+          collaboration. <strong>Thomas Allen's</strong> classic MIT finding is that the
+          frequency of technical communication between colleagues falls sharply with physical
+          distance — a shared space with a reason to show up is worth far more than an
+          adjacent hallway.
+        </p>
+        <p>
+          A 2022 <em>Nature Human Behaviour</em> study of 61,000 Microsoft employees
+          (Yang et al.) similarly found that without casual in-person contact, professional
+          networks become more siloed and cross-group information flow collapses.
+        </p>
+        <p>
+          The same dynamic applies inside a department. The coffee machine is the anchor.
+        </p>
+      </div>
+    </div>
+
+    <p class="case-pullquote">
+      <strong>$320/month is a small line item.</strong> What it buys — a daily, low-friction
+      reason for the faculty to share a room — is the kind of infrastructure that compounds
+      into collaborations, mentorship, and the culture of the department. This is an
+      investment in cohesion, not a coffee budget.
+    </p>
+  </div>
+
+  <!-- Section 4: Budget ask -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2>Monthly capsule budget</h2>
+    </div>
+
+    <div class="budget">
+      <div class="budget-left">
+        <p class="eyebrow">The ask</p>
+        <h3>$320<span class="unit">/ month</span></h3>
+        <p>
+          Covers <strong>8 boxes of 50 capsules</strong> per month at the Classics rate —
+          enough to serve projected faculty demand with a small buffer.
+          Capsules only ship in boxes of 50, so the monthly order rounds up to the next box.
+          No minimums, no contract — pay only for what we order.
+        </p>
+      </div>
+      <div class="budget-right">
+        <div><span class="k">Drinks / week (survey)</span><span class="v">~82</span></div>
+        <div><span class="k">Drinks / month</span><span class="v">~355</span></div>
+        <div><span class="k">Boxes / month (× 50)</span><span class="v">8 boxes</span></div>
+        <div><span class="k">Capsules purchased</span><span class="v">400</span></div>
+        <div><span class="k">Price per box</span><span class="v">$40</span></div>
+        <div><span class="k">Monthly spend</span><span class="v">$320</span></div>
+        <div><span class="k">Annualized</span><span class="v">$3,840</span></div>
+      </div>
+    </div>
+
+    <p style="font-size: 9pt; color: var(--muted); margin: 10px 2px 0;">
+      Capsules are sold only in boxes of 50, so the monthly order is rounded up to the
+      nearest box. Price per box is the Classics / Flavored / Starbucks rate ($40,
+      i.e.&nbsp;$0.80 per capsule), confirmed by Erin Martinez, Sr. Field Sales Specialist at
+      Nespresso Professional. Single-origin capsules run $44.50 per box and organic $47.00;
+      a fully organic mix would add roughly $56/month.
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>Sources: Nespresso Professional quote (Erin Martinez, Apr 15 2026) · Faculty survey, Apr 2026 (n=27)</span>
+    <span>Prepared by Fabian Eckert</span>
+  </div>
+
+</div>
+</body>
+</html>
