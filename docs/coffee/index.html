@@ -428,7 +428,7 @@
     <div class="survey-wrap">
       <div class="chart">
         <h4 style="margin-bottom: 4px;">Weekly drinks per UCSD economics faculty member — 27 respondents</h4>
-        <p style="font-size: 8pt; color: var(--muted); margin: 0 0 14px; font-style: italic; letter-spacing: 0.02em;">Survey conducted February 2026.</p>
+        <p style="font-size: 8pt; color: var(--muted); margin: 0 0 14px; font-style: italic; letter-spacing: 0.02em;">Survey conducted February 2026. 27 of 51 faculty responded (53%).</p>
 
         <div class="bar-row">
           <div class="label">0</div>
@@ -477,20 +477,46 @@
 
       <div class="survey-stats">
         <div class="stat">
+          <div class="n">27 / 51</div>
+          <div class="l">Faculty responded (53% of department)</div>
+        </div>
+        <div class="stat">
           <div class="n">20 of 27</div>
-          <div class="l">Faculty who would use the machine (74%)</div>
+          <div class="l">Respondents who would use the machine (74%)</div>
         </div>
         <div class="stat">
           <div class="n">~82</div>
-          <div class="l">Drinks per week, estimated total*</div>
-        </div>
-        <div class="stat">
-          <div class="n">~355</div>
-          <div class="l">Drinks per month (× 52 ÷ 12)</div>
+          <div class="l">Drinks / week from respondents*</div>
         </div>
         <p style="font-size: 8pt; color: var(--muted); margin: 4px 0 0; font-style: italic;">
           *Midpoints used; "5+" counted as 6.
         </p>
+      </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <h4 style="font-size: 9pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; font-weight: 500;">Two ways to read the survey</h4>
+      <div class="case-grid">
+        <div class="case-panel">
+          <div class="tag">Lower bound</div>
+          <p style="font-size: 10pt; font-weight: 500; margin: 0 0 6px; color: var(--ink);">Non-respondents don't drink coffee.</p>
+          <p>Treat the 27 respondents as the full user base. Total demand is exactly what the survey shows.</p>
+          <div style="font-size: 9pt; margin-top: 10px;">
+            <div style="display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px dotted var(--rule);"><span style="color: var(--muted);">Drinks / week</span><span>~82</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px dotted var(--rule);"><span style="color: var(--muted);">Boxes / month (× 50)</span><span>8</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 3px 0;"><span style="color: var(--muted);">Monthly spend</span><span style="font-weight: 500; color: var(--accent);">$320</span></div>
+          </div>
+        </div>
+        <div class="case-panel">
+          <div class="tag">Upper bound</div>
+          <p style="font-size: 10pt; font-weight: 500; margin: 0 0 6px; color: var(--ink);">Respondents are representative of all 51 faculty.</p>
+          <p>Scale respondent demand by 51/27 to project usage across the whole department.</p>
+          <div style="font-size: 9pt; margin-top: 10px;">
+            <div style="display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px dotted var(--rule);"><span style="color: var(--muted);">Drinks / week</span><span>~155</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px dotted var(--rule);"><span style="color: var(--muted);">Boxes / month (× 50)</span><span>14</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 3px 0;"><span style="color: var(--muted);">Monthly spend</span><span style="font-weight: 500; color: var(--accent);">$560</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -565,13 +591,14 @@
 
     <div class="budget">
       <div class="budget-left">
-        <p class="eyebrow">The ask</p>
+        <p class="eyebrow">The ask — lower bound</p>
         <h3>$320<span class="unit">/ month</span></h3>
         <p>
-          Covers <strong>8 boxes of 50 capsules</strong> per month at the Classics rate —
-          enough to serve projected faculty demand with a small buffer.
-          Capsules only ship in boxes of 50, so the monthly order rounds up to the next box.
-          No minimums, no contract — pay only for what we order.
+          We propose ordering at the <strong>lower-bound rate</strong>: 8 boxes of 50 capsules
+          per month at the Classics rate. Demand dips over summer and academic breaks, so
+          a steady monthly order at this level should average out across the year even if
+          in-term usage lands closer to the upper-bound estimate. No minimums, no contract —
+          pay only for what we order.
         </p>
       </div>
       <div class="budget-right">
@@ -596,7 +623,7 @@
 
   <!-- Footer -->
   <div class="footer">
-    <span>Sources: Nespresso Professional quote (Erin Martinez, Apr 15 2026) · UCSD Economics faculty survey, February 2026 (n=27)</span>
+    <span>Sources: Nespresso Professional quote (Erin Martinez, Apr 15 2026) · UCSD Economics faculty survey, February 2026 (n=27 of 51)</span>
     <span>Prepared by Fabian Eckert</span>
   </div>
 
