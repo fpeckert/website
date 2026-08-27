@@ -68,7 +68,7 @@ a:active {
 
 .header-wrapper {
   margin-top: 18px;
-  max-width: 680px;
+  max-width: 760px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -106,7 +106,7 @@ a:active {
 
 .content-wrapper {
   width: 100%;
-  max-width: 680px;
+  max-width: 760px;
   box-sizing: border-box;
   margin: 0;
 }
