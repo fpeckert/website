@@ -1,0 +1,14 @@
+#!/bin/sh
+# Stamp the homepage footer with today's date whenever the site changes.
+# Enabled via: git config core.hooksPath .githooks
+
+# Only act if something under docs/ is being committed.
+if git diff --cached --name-only | grep -q '^docs/'; then
+    python3 scripts/stamp-updated.py
+    # Exit 0 means the footer date changed; re-stage the homepage.
+    if [ $? -eq 0 ]; then
+        git add docs/index.html
+    fi
+fi
+
+exit 0
