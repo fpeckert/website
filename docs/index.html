@@ -68,11 +68,25 @@ a:active { opacity: 0.8; }
 .content-wrapper { width: 100%; max-width: 760px; box-sizing: border-box; margin: 0; }
 .content-wrapper a { cursor: pointer; }
 .info-section {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0;
   margin-bottom: 6px;
+  padding-right: 160px;
   font-size: 1em;
+}
+.info-photo {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+.info-photo img {
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .info-item { margin-bottom: 4px; }
 .info-item .label { color: #CC8855; font-weight: bold; margin-right: 6px; }
@@ -121,7 +135,8 @@ a:active { opacity: 0.8; }
   .nav-wrapper { text-align: left; }
   .nav-wrapper ul li { margin-left: 0; margin-right: 10px; margin-bottom: 4px; }
   .nav-wrapper ul li a, .nav-wrapper ul li span { font-size: 0.85em; }
-  .info-section { flex-direction: column; gap: 0; font-size: 1em; }
+  .info-section { flex-direction: column; gap: 0; font-size: 1em; padding-right: 0; }
+  .info-photo { position: static; order: -1; width: 110px; height: 110px; margin-bottom: 10px; }
   .section-header { margin-top: 22px; font-size: 0.9em; }
   .paper-list li { margin-bottom: 8px; padding-left: 1em; text-indent: -1em; }
   .paper-date, .paper-coauthors, .paper-links, .paper-media { display: none; }
@@ -225,11 +240,15 @@ a:active { opacity: 0.8; }
 
       <!-- Info -->
       <div class="info-section">
+        <div class="info-text">
         <div class="info-item">visiting assistant professor, <a target='_blank' href="https://siepr.stanford.edu/people/young-scholars">siepr</a>, <a target='_blank' href="https://www.stanford.edu/">stanford university</a> (ay 26/27)</div>
         <div class="info-item">assistant professor, <a target='_blank' href="https://economics.ucsd.edu/faculty-and-research/faculty-profiles/eckert.html">ucsd</a> <a target='_blank' href="https://economics.ucsd.edu">econ</a> (on leave)</div>
         <div class="info-item">associate editor, <a target='_blank' href="https://www.sciencedirect.com/journal/journal-of-international-economics">jie</a></div>
         <div class="info-item" style="margin-top: 0.5em; color: rgba(255,253,218,.5);">trade, economic geography, macroeconomics</div>
-        <div class="info-item" style="color: rgba(255,253,218,.5);">fpe at ucsd dot edu</div>      </div>
+        <div class="info-item" style="color: rgba(255,253,218,.5);">fpe at ucsd dot edu</div>
+        </div>
+        <div class="info-photo"><img src="./photo.jpg" alt="Fabian Eckert"></div>
+      </div>
 
       <!-- Under Revision -->
       <b class="section-header">under revision</b>
@@ -364,7 +383,7 @@ a:active { opacity: 0.8; }
     </div>
 
     <footer style="text-align: left; font-size: 0.75em; color: rgba(255,253,218,.35); font-style: italic; margin-top: 20px; margin-bottom: 30px;">
-      &copy; Fabian Eckert 2026 &middot; Last updated 2026-08-27
+      &copy; Fabian Eckert 2026 &middot; Last updated 2026-09-09
     </footer>
   </div>
 </body>
