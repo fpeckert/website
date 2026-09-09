@@ -122,15 +122,15 @@ a:active {
   flex-direction: column;
   gap: 0;
   margin-bottom: 6px;
-  padding-right: 160px;
+  padding-left: 160px;
   font-size: 1em;
 }
 
-/* Circular photo, right-aligned, as tall as the info text block */
+/* Circular photo, left of the info text, as tall as the text block */
 .info-photo {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   bottom: 0;
   aspect-ratio: 1 / 1;
   height: auto;
@@ -310,7 +310,7 @@ a:active {
     flex-direction: column;
     gap: 0;
     font-size: 0.85em;
-    padding-right: 0;
+    padding-left: 0;
   }
 
   .info-photo {
