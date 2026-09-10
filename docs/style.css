@@ -117,10 +117,12 @@ a:active {
 
 /* Info section: affiliation, interests, contact in a compact row */
 .info-section {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
+  padding-right: 160px;
   font-size: 1em;
 }
 
@@ -128,18 +130,11 @@ a:active {
   margin-bottom: 4px;
 }
 
-/* First three info lines, with the round photo right-aligned beside them,
-   as tall as those three lines */
-.info-top {
-  position: relative;
-  margin-bottom: 4px;
-  padding-right: 100px;
-}
-
-.info-top .info-item:last-child {
+.info-item:last-child {
   margin-bottom: 0;
 }
 
+/* Round photo, right-aligned, as tall as the five info lines */
 .info-photo {
   position: absolute;
   top: 0;
@@ -319,9 +314,6 @@ a:active {
     flex-direction: column;
     gap: 0;
     font-size: 0.85em;
-  }
-
-  .info-top {
     padding-right: 0;
   }
 
