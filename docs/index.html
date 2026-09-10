@@ -124,6 +124,9 @@ a:active { opacity: 0.8; }
 .paper-media a:hover { color: rgba(255,253,218,.6); }
 .fade-in { animation: fadeIn 1s; }
 @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes spinOnce { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.info-photo img, .header-photo img { cursor: pointer; }
+.photo-spin { animation: spinOnce 0.9s cubic-bezier(0.4, 0, 0.2, 1); }
 .no-underline { text-decoration: none; }
 @media (max-width: 700px) {
   .info-section { padding-left: 0; }
@@ -392,5 +395,18 @@ a:active { opacity: 0.8; }
       &copy; Fabian Eckert 2026 &middot; Last updated 2026-09-09
     </footer>
   </div>
+
+  <script>
+  // Click the photo: one full turn, then it comes to rest
+  document.querySelectorAll('.info-photo img, .header-photo img').forEach(function(img) {
+    img.addEventListener('click', function() {
+      if (img.classList.contains('photo-spin')) return;
+      img.classList.add('photo-spin');
+    });
+    img.addEventListener('animationend', function() {
+      img.classList.remove('photo-spin');
+    });
+  });
+  </script>
 </body>
 </html>

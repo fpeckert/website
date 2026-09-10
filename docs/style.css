@@ -287,6 +287,21 @@ a:active {
   100% { opacity: 1; }
 }
 
+/* Click the photo: one full turn, then it comes to rest (script in index.html) */
+@keyframes spinOnce {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.info-photo img,
+.header-photo img {
+  cursor: pointer;
+}
+
+.photo-spin {
+  animation: spinOnce 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .no-underline {
   text-decoration: none;
 }
