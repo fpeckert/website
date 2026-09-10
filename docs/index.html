@@ -85,6 +85,8 @@ a:active { opacity: 0.8; }
   height: auto;
 }
 .info-photo img { display: block; width: 100%; height: 100%; box-sizing: border-box; object-fit: cover; border-radius: 50%; border: 1px solid rgba(255,253,218,.2); }
+.header-photo { display: none; }
+.header-photo img { display: block; width: 100%; height: 100%; box-sizing: border-box; object-fit: cover; border-radius: 50%; border: 1px solid rgba(255,253,218,.2); }
 .info-item .label { color: #CC8855; font-weight: bold; margin-right: 6px; }
 .section-header {
   display: block;
@@ -131,8 +133,12 @@ a:active { opacity: 0.8; }
   .spacing-box { height: 25px; }
   .main-wrapper { max-width: 100%; padding: 0 16px; }
   .name-wrapper h1 { font-size: 1.6em; }
-  .header-wrapper { flex-direction: column; align-items: stretch; gap: 4px; }
-  .nav-wrapper { text-align: left; }
+  .header-wrapper { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; column-gap: 16px; row-gap: 4px; align-items: stretch; }
+  .name-wrapper { grid-column: 1; grid-row: 1; }
+  .nav-wrapper { grid-column: 1; grid-row: 2; text-align: left; }
+  .header-photo { display: block; grid-column: 2; grid-row: 1 / 3; justify-self: end; align-self: center; width: 64px; height: 64px; }
+  .info-photo { display: none; }
+  .wide-only { display: none; }
   .nav-wrapper ul li { margin-left: 0; margin-right: 10px; margin-bottom: 4px; }
   .nav-wrapper ul li a, .nav-wrapper ul li span { font-size: 0.85em; }
   .info-section { flex-direction: column; gap: 0; font-size: 1em; }
@@ -186,7 +192,7 @@ a:active { opacity: 0.8; }
 
         // Grab all visible block-level elements as whole units
         var wrapper = document.querySelector('.main-wrapper');
-        var els = wrapper.querySelectorAll('h1, li, .info-item, .section-header, .nav-wrapper ul, .info-photo img');
+        var els = wrapper.querySelectorAll('h1, li, .info-item, .section-header, .nav-wrapper ul, .info-photo img, .header-photo img');
         var viewH = window.innerHeight;
 
         els.forEach(function(el) {
@@ -233,6 +239,9 @@ a:active { opacity: 0.8; }
         <li><a href='https://x.com/fpeckert'>x</a></li>
       </ul>
     </div>
+
+    <!-- Photo shown in the header on phones only (see the 600px media query) -->
+    <div class='header-photo'><img src="./photo.jpg" alt="Fabian Eckert"></div>
     </div>
 
     <!-- Main Content -->
@@ -241,7 +250,7 @@ a:active { opacity: 0.8; }
       <!-- Info -->
       <div class="info-section">
         <div class="info-photo"><img src="./photo.jpg" alt="Fabian Eckert"></div>
-        <div class="info-item">visiting assistant professor, <a target='_blank' href="https://siepr.stanford.edu/people/young-scholars">siepr</a>, <a target='_blank' href="https://www.stanford.edu/">stanford university</a> (ay 26/27)</div>
+        <div class="info-item">visiting assistant professor, <span class="wide-only"><a target='_blank' href="https://siepr.stanford.edu/people/young-scholars">siepr</a>, </span><a target='_blank' href="https://www.stanford.edu/">stanford university</a><span class="wide-only"> (ay 26/27)</span></div>
         <div class="info-item">assistant professor, <a target='_blank' href="https://economics.ucsd.edu/faculty-and-research/faculty-profiles/eckert.html">ucsd</a> <a target='_blank' href="https://economics.ucsd.edu">econ</a> (on leave)</div>
         <div class="info-item">associate editor, <a target='_blank' href="https://www.sciencedirect.com/journal/journal-of-international-economics">jie</a></div>
         <div class="info-item" style="margin-top: 0.5em; color: rgba(255,253,218,.5);">trade, economic geography, macroeconomics</div>
@@ -322,7 +331,7 @@ a:active { opacity: 0.8; }
           </span>
         </li>
         <li>
-          <a class="paper-title" target="_blank" href="./ejp_aea.pdf">Sprouting Cities: How Rural America Industrialized</a>
+          <a class="paper-title" target="_blank" href="./ejp_aea.pdf">Sprouting Cities<span class="wide-only">: How Rural America Industrialized</span></a>
           <span class="paper-date">05/23</span>
           <span class="paper-coauthors"><a target="_blank" href="https://economics.ucsd.edu/graduate-program/about/grad-profiles/cohort%202021/Juneau-john.html">Juneau</a>, <a target="_blank" href="https://mipeters.weebly.com">Peters</a></span>
           <span class="paper-venue"><a target="_blank" href="https://doi.org/10.1257/pandp.20231075">aea p&amp;p 2023</a></span>
