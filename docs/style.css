@@ -122,7 +122,7 @@ a:active {
   flex-direction: column;
   gap: 0;
   margin-bottom: 10px;
-  padding-left: 160px;
+  padding-left: 154px;
   font-size: 1em;
 }
 
@@ -137,9 +137,9 @@ a:active {
 /* Round photo, left of the five info lines and as tall as them */
 .info-photo {
   position: absolute;
-  top: 0;
+  top: 3px;
   left: 0;
-  bottom: 0;
+  bottom: 3px;
   aspect-ratio: 1 / 1;
   height: auto;
 }
@@ -276,6 +276,20 @@ a:active {
   text-decoration: none;
 }
 
+/* Narrow windows: small circle above the info lines instead of beside them */
+@media (max-width: 700px) {
+  .info-section {
+    padding-left: 0;
+  }
+
+  .info-photo {
+    position: static;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+}
+
 /* Responsive: phone screens */
 @media (max-width: 600px) {
   .spacing-box {
@@ -316,11 +330,6 @@ a:active {
     flex-direction: column;
     gap: 0;
     font-size: 0.85em;
-    padding-left: 0;
-  }
-
-  .info-photo {
-    display: none;
   }
 
   .section-header {
