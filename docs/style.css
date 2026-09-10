@@ -391,11 +391,11 @@ a:active {
   .info-section {
     flex-direction: column;
     gap: 0;
-    font-size: 0.85em;
+    font-size: 1em;
   }
 
   .section-header {
-    margin-top: 18px;
+    margin-top: 22px;
     font-size: 0.9em;
   }
 
