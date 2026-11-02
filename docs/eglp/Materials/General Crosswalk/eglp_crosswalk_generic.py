@@ -1,57 +1,110 @@
-#Eckert, Gvirtz, Liang, Peters, 2020
-#"A Method to Construct Geographical Crosswalks with an Application to US Counties since 1790"
-#www.fpeckert.me/eglp
+"""Build a crosswalk between any two maps of the same territory.
 
-## A generic code to construct your own crosswalk, from two shapefiles
+Eckert, Gvirtz, Liang, Peters, "A Method to Construct Geographical Crosswalks
+with an Application to US Counties since 1790", NBER WP 26770. www.fpeckert.me/eglp
 
-import pandas as pd
-import geopandas as gpd
+Fill in the values in ALL_CAPS below (see Appendix B of the paper), then run
+    python crosswalk_generic.py
+
+The output is a csv file with three columns: the ID of the reporting unit, the ID of the
+reference unit, and the weight. The weight is the share of the reporting unit's area that lies
+in the reference unit, so the weights of each reporting unit sum to one. Multiply a stock
+variable (population, payroll) of each reporting unit by the weights and sum within reference
+units to move the data to the reference map.
+"""
 import os
+import warnings
 
-## defining variables - change the things in ALL_CAPS
-origin_path = 'PATH_ORIGIN'
-origin_fname = 'ORIGIN_FNAME'
-origin_geoid = 'ORIGIN_GEOID'
+import geopandas as gpd
 
-destination_path = 'PATH_DESTINATION'
-destination_fname = 'DESTINATION_FNAME'
-destination_geoid = 'DESTINATION_GEOID'
+# ---------------------------------------------------------------------------
+# Settings: replace the values in ALL_CAPS
+# ---------------------------------------------------------------------------
+reporting_path = 'PATH_REPORTING'     # folder that holds the reporting shapefile
+reporting_fname = 'REPORTING_FNAME'   # e.g. 'US_county_1900.shp'
+reporting_geoid = 'REPORTING_GEOID'   # column that identifies each reporting unit
 
-output_path = 'OUTPUT_PATH'
-output_fname = 'OUTPUT_FNAME'
+reference_path = 'PATH_REFERENCE'     # folder that holds the reference shapefile
+reference_fname = 'REFERENCE_FNAME'   # e.g. 'US_county_2010.shp'
+reference_geoid = 'REFERENCE_GEOID'   # column that identifies each reference unit
 
+output_path = 'OUTPUT_PATH'           # folder for the crosswalk
+output_fname = 'OUTPUT_FNAME'         # e.g. 'crosswalk_1900_2010.csv'
 
-## read in starting shapefile
-os.chdir(origin_path)
-shp_origin = gpd.GeoDataFrame.from_file(origin_fname)
-shp_origin['area_base'] = shp_origin.area
-
-## read in ending shapefile
-os.chdir(destination_path)
-shp_destination = gpd.GeoDataFrame.from_file(destination_fname)
-
-
-## intersecting the file
-intersect = gpd.overlay(shp_origin, shp_destination, how = 'intersection')
-intersect['area'] = intersect.area
-
-## computing weights
-intersect['weight'] = intersect['area'] / intersect['area_base']
-
-## renormalizing weights - this isn't necesary, but without it, if the shapefiles do not perfectly line up where they should, you may lose small fractions of area here and there
-reweight = temp.groupby(origin_geoid)['weight'].sum().reset_index()
-reweight['new_weight'] = reweight['weight']
-reweight = reweight.drop('weight', axis = 1)
-
-intersect = intersect.merge(reweight, left_on = origin_geoid, right_on = origin_geoid)
-intersect['weight'] = intersect['weight'] / intersect['new_weight']
-
-intersect = intersect.drop('new_weight', axis =1)
+# Optional settings
+min_area = 0          # drop intersections of this area or less (in square meters when the
+                      # area projection is in meters; the county crosswalks use 10)
+area_crs = None       # projection used to measure areas. None: use the reporting map's own
+                      # projection if it is projected, otherwise the equal-area EPSG:6933.
+                      # For US maps, the NHGIS projection 'ESRI:102003' is a good choice.
 
 
-## keeping only relevant columns - again isn't necessary, but will help trim down the size of the crosswalk at the end
-output = intersect[[origin_geoid, destination_geoid, 'weight']]
+def read_map(path, fname, geoid):
+    """Read one map and keep only its ID column and its polygons, after checking both."""
+    shp = gpd.read_file(os.path.join(path, fname))
+    if geoid not in shp.columns:
+        raise KeyError(f"{fname} has no column '{geoid}'. Its columns are: {list(shp.columns)}")
+    if shp.crs is None:
+        raise ValueError(f"{fname} has no coordinate system (.prj file). Set one with .set_crs() first.")
+    shp = shp[[geoid, 'geometry']]
+    if shp[geoid].duplicated().any():
+        # several polygons share one ID (e.g. islands stored as separate rows): merge them
+        shp = shp.dissolve(by=geoid, as_index=False)
+    return shp
 
 
-## saving output
-output.to_csv(output_fname, index = False)
+def main():
+    # Step 1: read the two maps.
+    shp_reporting = read_map(reporting_path, reporting_fname, reporting_geoid)
+    shp_reference = read_map(reference_path, reference_fname, reference_geoid)
+
+    # Step 2: put both maps in one projection. Areas are measured in it, so it should preserve
+    # areas (an "equal-area" projection); otherwise the weights are distorted.
+    crs = area_crs
+    if crs is None:
+        crs = shp_reporting.crs if shp_reporting.crs.is_projected else 'EPSG:6933'
+        if shp_reporting.crs.is_projected:
+            warnings.warn(f"Measuring areas in the reporting map's projection ({shp_reporting.crs.name}). "
+                          "Set area_crs if that projection is not equal-area.")
+    shp_reporting = shp_reporting.to_crs(crs)
+    shp_reference = shp_reference.to_crs(crs)
+
+    # The two ID columns may have the same name (e.g. GEOID in both maps): keep them apart.
+    rep_id, ref_id = reporting_geoid, reference_geoid
+    if rep_id == ref_id:
+        rep_id, ref_id = rep_id + '_reporting', ref_id + '_reference'
+        shp_reporting = shp_reporting.rename(columns={reporting_geoid: rep_id})
+        shp_reference = shp_reference.rename(columns={reference_geoid: ref_id})
+
+    # Step 3: the area of each reporting unit, measured before the overlay.
+    shp_reporting['area_base'] = shp_reporting.area
+
+    # Step 4: overlay the maps. Each row of the result is a piece that lies in exactly one
+    # reporting unit and one reference unit.
+    intersect = gpd.overlay(shp_reporting, shp_reference, how='intersection')
+    if intersect.empty:
+        raise ValueError("The two maps do not overlap. Check that they cover the same territory.")
+    # Step 5: drop pieces of min_area or less (slivers where the two maps draw the same
+    # boundary slightly differently).
+    intersect['area'] = intersect.area
+    intersect = intersect[intersect['area'] > min_area]
+
+    # Step 6: the weight is the share of the reporting unit's area that lies in the piece.
+    intersect['weight'] = intersect['area'] / intersect['area_base']
+
+    # Step 7: rescale so that each reporting unit's weights sum to one. Without this, small gaps
+    # where the two maps do not line up exactly would lose a little of each unit.
+    intersect['weight'] = intersect['weight'] / intersect.groupby(rep_id)['weight'].transform('sum')
+
+    # Step 8: save one row per piece: reporting ID, reference ID, weight.
+    output = intersect[[rep_id, ref_id, 'weight']]
+    output.to_csv(os.path.join(output_path, output_fname), index=False)
+    print(f"saved {len(output)} rows to {os.path.join(output_path, output_fname)}")
+
+
+if __name__ == '__main__':
+    main()
+
+# If you get OSErrors from shapely, there is a problem with your environment.
+# A fix is described here: https://github.com/conda-forge/shapely-feedstock/issues/64
+# Thank you to Daniel Bischof for pointing out this problem and finding the solution.
