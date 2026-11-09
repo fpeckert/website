@@ -20,6 +20,10 @@
     .content-wrapper { max-width:850px; font-size:0.9em; }
     .presenter-name { color: #CC8855; font-weight: bold; }
     .section-label { color:#CC8855; font-weight:bold; margin-right:4px; }
+    .link-list { margin:4px 0 14px 0; padding-left:20px; }
+    .link-list li { margin:3px 0; }
+    .link-list li::marker { color:#CC8855; }
+    .muted { color:rgba(255,253,218,.45); }
   </style>
 <script data-goatcounter="https://fpeckert.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -39,23 +43,68 @@
     </div>
 
     <div class='content-wrapper fade-in'>
-      <p style="margin: 12px 0 18px 0; font-size: 0.9em;">Crosswalk files for US counties across changing boundary definitions, 1790&ndash;present.</p>
+      <p style="margin: 12px 0 18px 0;">Crosswalk files for US counties across changing boundary definitions, 1790&ndash;present.</p>
 
       <p><span class="section-label">collaborators</span> Eckert &middot; Gvirtz &middot; Liang &middot; Peters</p>
       <p><span class="section-label">paper</span> <a target="_blank" href="../eglp.pdf">A Method to Construct Geographical Crosswalks with an Application to US Counties since 1790</a> &middot; <a target="_blank" href="https://www.nber.org/papers/w26770">NBER #26770</a></p>
-      <p><span class="section-label">info</span> Empirical researchers often have to map data provided for a &ldquo;reporting&rdquo; spatial unit, say counties in 1900, to a &ldquo;reference&rdquo; one, say, counties in 2010. We discuss a general method to create such crosswalks: computing the share of the area of each reporting unit nested in a given reference unit. Using these shares, data can be re-aggregated from the reporting to the reference units. We apply the method to construct a crosswalk for mapping US county-level data from 1790 to 2010 to present-day county or commuting zone delineations. We also provide the code to generate other crosswalks given maps of reporting and reference units.</p>
-      <p><span class="section-label">us county crosswalks</span> All files and code are in the <a href="https://github.com/liang-jack-a/EGLP_Crosswalk">GitHub repository</a>. Crosswalks as csv: <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/raw/master/Crosswalks/county_crosswalk_endyr_1990.csv">1990 Counties</a> &middot; <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/raw/master/Crosswalks/county_crosswalk_endyr_2010.csv">2010 Counties</a> &middot; <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/raw/master/Crosswalks/cz_crosswalk.csv">1990 Commuting Zones</a> &middot; <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/tree/master/Crosswalks">Stata versions and Readme</a> &middot; <a href="https://github.com/liang-jack-a/EGLP_Crosswalk#using-a-crosswalk-in-four-steps">How to use them</a> &middot; <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/tree/master/Example">Usage example (Python and Stata)</a> &middot; <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/tree/master/Code">Replication code</a></p>
-      <p><span class="section-label">us commuting zone shapefile</span> <a href="http://fpeckert.me/eglp/Materials/Shapefiles/cz1990_shapefile.zip" download>1990</a> &middot; <a href="https://healthinequality.org/data/" download>Source</a></p>
-      <p><span class="section-label">creating general geographical crosswalks</span> <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/blob/master/Code/crosswalk_generic.py">Python code</a> &middot; <a href="https://github.com/liang-jack-a/EGLP_Crosswalk/blob/master/Code/README_crosswalk_generation.md">Readme</a></p>
-      <p><span class="section-label">other ready-made crosswalks</span>
-        <a href="https://s4.ad.brown.edu/Projects/Diversity/Researcher/Bridging.htm">Census Tracts 1970&ndash;2010</a> &middot;
-        <a href="https://www.icpsr.umich.edu/web/ICPSR/studies/6576">County Longitudinal Template</a> &middot;
-        <a href="https://voices.uchicago.edu/richardhornbeck/">Hornbeck county boundary fixes 1880&ndash;1910</a>
-      </p>
+      <p><span class="section-label">info</span> Empirical researchers often have to map data provided for a &ldquo;reporting&rdquo; spatial unit, say, counties in 1900, to a &ldquo;reference&rdquo; one, say, counties in 2010. We discuss a general method to create such crosswalks: computing the share of the area of each reporting unit nested in a given reference unit. Using these shares, data can be re-aggregated from the reporting to the reference units. We apply the method to construct a crosswalk for mapping US county-level data from 1790 to 2010 to present-day county or commuting zone delineations. We then extend the method by computing the same shares using additional geographic information on livable terrain and historical data on the size and location of towns, which inform the distribution of population within counties in each decade. We also provide the code to generate other crosswalks given maps of reporting and reference units.</p>
+
+      <p style="margin-bottom:0;"><span class="section-label">download the crosswalks</span></p>
+      <ul class="link-list">
+        <li><a data-download="county_crosswalk_endyr_2010.csv" href="https://raw.githubusercontent.com/liang-jack-a/EGLP_Crosswalk/master/Crosswalks/county_crosswalk_endyr_2010.csv">Counties of 1790&ndash;2000 to 2010 counties</a> <span class="muted">(csv)</span></li>
+        <li><a data-download="cz_crosswalk.csv" href="https://raw.githubusercontent.com/liang-jack-a/EGLP_Crosswalk/master/Crosswalks/cz_crosswalk.csv">Counties of 1790&ndash;2010 to 1990 commuting zones</a> <span class="muted">(csv)</span></li>
+        <li><a target="_blank" href="https://github.com/liang-jack-a/EGLP_Crosswalk#readme">Readme: how to use the crosswalks</a></li>
+      </ul>
+      <p class="muted" style="margin-top:0;">Each file gives three weights: by area, by livable area, and by population. The files come straight from the GitHub repository, so they are always the latest version.</p>
+
+      <p style="margin-bottom:0;"><span class="section-label">more on github</span></p>
+      <ul class="link-list">
+        <li><a target="_blank" href="https://github.com/liang-jack-a/EGLP_Crosswalk">GitHub repository</a> <span class="muted">(the crosswalk to 1990 counties, Stata versions, examples in Python and Stata, and the code that builds the crosswalks)</span></li>
+        <li><a target="_blank" href="https://github.com/liang-jack-a/EGLP_Crosswalk/blob/master/Code/crosswalk_generic.py">Make your own crosswalk between any two maps</a> <span class="muted">(Python)</span> &middot; <a target="_blank" href="https://github.com/liang-jack-a/EGLP_Crosswalk/blob/master/Code/README_crosswalk_generation.md">readme</a></li>
+        <li><a href="Materials/Shapefiles/cz1990_shapefile.zip" download>1990 commuting zone shapefile</a> &middot; <a target="_blank" href="https://healthinequality.org/data/">source</a></li>
+      </ul>
+
+      <p style="margin-bottom:0;"><span class="section-label">other ready-made crosswalks</span></p>
+      <ul class="link-list">
+        <li><a target="_blank" href="https://s4.ad.brown.edu/Projects/Diversity/Researcher/Bridging.htm">Census tracts 1970&ndash;2010</a></li>
+        <li><a target="_blank" href="https://www.icpsr.umich.edu/web/ICPSR/studies/6576">County Longitudinal Template</a></li>
+        <li><a target="_blank" href="https://voices.uchicago.edu/richardhornbeck/">Hornbeck county boundary fixes 1880&ndash;1910</a></li>
+      </ul>
+
       <p><span class="section-label">citation</span> Fabian Eckert, Andr&eacute;s Gvirtz, Jack Liang, and Michael Peters. &ldquo;A Method to Construct Geographical Crosswalks with an Application to US Counties since 1790.&rdquo; NBER Working Paper #26770, 2020</p>
 
       <br><br><br>
     </div>
   </div>
+  <script>
+    // Download a crosswalk straight from GitHub, saved under its own file name. GitHub serves the
+    // files as plain text, which browsers would otherwise open in the window. If the download
+    // fails, the link opens the file on GitHub instead.
+    document.querySelectorAll('a[data-download]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        if (!window.fetch || !window.URL) return;
+        e.preventDefault();
+        var label = a.textContent;
+        a.textContent = label + ' (downloading…)';
+        fetch(a.href).then(function (r) {
+          if (!r.ok) throw new Error(r.status);
+          return r.blob();
+        }).then(function (b) {
+          var url = URL.createObjectURL(new Blob([b], { type: 'text/csv' }));
+          var tmp = document.createElement('a');
+          tmp.href = url;
+          tmp.download = a.dataset.download;
+          document.body.appendChild(tmp);
+          tmp.click();
+          tmp.remove();
+          setTimeout(function () { URL.revokeObjectURL(url); }, 10000);
+        }).catch(function () {
+          window.location.href = a.href;
+        }).finally(function () {
+          a.textContent = label;
+        });
+      });
+    });
+  </script>
 </body>
 </html>
