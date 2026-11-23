@@ -246,14 +246,25 @@
   </div>
 
   <script>
-  // Click the photo: one full turn, then it comes to rest
+  // Click the photo: the first click mirrors it, the second spins it once,
+  // the third turns it back to face the original way, the fourth spins it again.
   document.querySelectorAll('.info-photo img, .header-photo img').forEach(function(img) {
+    var clicks = 0;
+    var busy = false;
     img.addEventListener('click', function() {
-      if (img.classList.contains('photo-spin')) return;
-      img.classList.add('photo-spin');
+      if (busy) return;
+      busy = true;
+      if (clicks % 2 === 0) {
+        img.classList.toggle('photo-mirrored');
+        setTimeout(function() { busy = false; }, 650);
+      } else {
+        img.classList.add('photo-spin');
+      }
+      clicks++;
     });
     img.addEventListener('animationend', function() {
       img.classList.remove('photo-spin');
+      busy = false;
     });
   });
   </script>

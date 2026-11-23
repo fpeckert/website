@@ -297,6 +297,12 @@ a:active {
 .info-photo img,
 .header-photo img {
   cursor: pointer;
+  transition: scale 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mirrored photo. Uses `scale`, not `transform`, so it stays mirrored while it spins */
+.photo-mirrored {
+  scale: -1 1;
 }
 
 .photo-spin {
